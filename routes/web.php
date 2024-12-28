@@ -9,6 +9,7 @@ Route::get('/', [HomePageController::class,'index'])->name('home');
 Route::get('/about', [HomePageController::class,'about'])->name('about');
 Route::get('/course', [HomePageController::class,'course'])->name('course');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
+Route::get('/payment', [HomePageController::class,'payment'])->name('payment');
 
 // User Authentication
 //Route::prefix('user')->group(function () {

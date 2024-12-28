@@ -157,7 +157,7 @@
         position: relative;
         min-height: 500px;
     }
-    
+
     .header-carousel .owl-carousel-item img {
         position: absolute;
         width: 100%;
@@ -431,4 +431,23 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+.depName{
+    color: rgb(68, 65, 65);
+    text-transform: capitalize;
+    list-style: none;
+}
+.depName a{
+    display: block;
+    padding: 8px 16px;
+    clear: both;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #656464;
+    white-space: nowrap;
+    border-bottom: 1px solid #f1f2f2;
+    font-size: 13px;
+    background: url('/image/bread-crumb-arrow.png') 0 5px no-repeat;
+    background-position: 8px 16px;
 }

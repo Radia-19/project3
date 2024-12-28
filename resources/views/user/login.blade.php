@@ -28,7 +28,7 @@
                    </div>
                    <div class="text-center">
                     <p class="mt-1 ">New Here? <a href="{{ url('/register') }}">Join Now</a></p>
-                    <hr>
+                    
                     <div class="text-center">
                         <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center border rounded shadow-sm w-100" style="padding: 10px 20px;">
                             <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">

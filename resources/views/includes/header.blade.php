@@ -11,7 +11,7 @@
             <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
             <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
             <a href="{{ route('course') }}" class="nav-item nav-link">Courses</a>
-            <a href="#" class="nav-item nav-link">Trainers</a>
+            <a href="{{ route('payment') }}" class="nav-item nav-link">Payment</a>
             <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
             <a href="{{ route('login.show') }}" class="nav-item nav-link">Login</a>
         </div>
