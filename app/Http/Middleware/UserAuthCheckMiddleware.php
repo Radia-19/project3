@@ -22,7 +22,7 @@ class UserAuthCheckMiddleware
             return $next($request);
         }else{
             Log::warning('Unauthenticated access attempt to: ' . $request->path());
-            return to_route('user.login.show')->with('errMsg','You Must Login First!');
+            return to_route('login.show')->with('errMsg','You Must Login First!');
         }
 
     }

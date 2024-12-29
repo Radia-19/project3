@@ -16,7 +16,7 @@
     <!-- Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/styles.css') }}" rel="stylesheet" /> --}}
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,14 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     @stack('css')
+
+    <style>
+        .search-input {
+            display: none; /* Hide the input field by default */
+            /* transition: all 0.3s ease-in-out; */
+            transition: opacity 0.5s ease, max-width 0.5s ease; /* Smooth transition */
+        }
+    </style>
 
 </head>
 <body>
@@ -73,6 +81,27 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('js/main.js') }}"></script>
+
+    <!-- JavaScript -->
+<script>
+    const searchButton = document.getElementById('search-button');
+    const inputField = document.getElementById('query-input');
+
+    searchButton.addEventListener('click', function () {
+        if (inputField.style.display === 'none' || inputField.style.display === '') {
+            // Show the input field and focus on it
+            inputField.style.display = 'inline-block';
+            inputField.focus();
+        } else {
+            // If input is visible, submit the form
+            if (inputField.value.trim() !== '') {
+                searchButton.closest('form').submit();
+            } else {
+                alert('Please enter a search term.');
+            }
+        }
+    });
+</script>
 
     @stack('js')
 </body>
