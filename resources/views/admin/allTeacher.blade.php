@@ -1,12 +1,12 @@
 @extends('layouts.adminLayout')
 
 @section('title')
-All allTeacher
+All allTrainer
 @endsection
 
 
 @section('content')
-<h1 class="page-title">All Teacher's</h1>
+<h1 class="page-title">All Trainer's</h1>
 <div class="card">
   <div class="card-body">
     <div class="row">

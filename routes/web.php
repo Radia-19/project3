@@ -19,14 +19,30 @@ Route::get('/course', [HomePageController::class,'course'])->name('course');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
 Route::get('/search', [HomePageController::class,'search'])->name('search');
 
+//Users
+Route::get('enroll',[UploadController::class,'enroll'])->name('enroll.show');
+Route::post('enroll',[UploadController::class,'enroll'])->name('enroll');
+Route::get('payment',[FinancialController::class,'payment'])->name('payment.show');
+Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
+
+//Trainers
+Route::get('upload',[UploadController::class,'index'])->name('upload.show');
+Route::post('upload',[UploadController::class,'upload'])->name('upload');
+Route::get('books',[BookController::class,'index'])->name('books.show');
+Route::get('books/send-for-sale/{bookId}',[BookController::class,'sendForSale'])->name('books.sale');
+Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
+Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
+
+
 // User Authentication
-//Route::prefix('user')->group(function () {
-    Route::get('login', [UserAuthController::class,'showLogin'])->name('login.show');
-    Route::post('login', [UserAuthController::class,'login'])->name('login');
-    Route::get('logout', [UserAuthController::class,'logout'])->name('logout');
-    Route::get('register', [UserAuthController::class,'showRegister'])->name('register.show');
-    Route::post('register', [UserAuthController::class,'register'])->name('register');
-//    });
+Route::get('login', [UserAuthController::class,'showLogin'])->name('login.show');
+Route::post('login', [UserAuthController::class,'login'])->name('login');
+Route::get('logout', [UserAuthController::class,'logout'])->name('logout');
+Route::get('register', [UserAuthController::class,'showRegister'])->name('register.show');
+Route::post('register', [UserAuthController::class,'register'])->name('register');
+
+Route::get('google-login/google',[UserAuthController::class,'redirectTogoogle'])->name('googleLogin');
+Route::get('google-login/google/callback',[UserAuthController::class,'handleGoogleCallback'])->name('googleCallback');
 
 // Admin Authentication
 Route::prefix('admin')->group(function () {
@@ -76,10 +92,4 @@ Route::POST('/update/teacher{id}',[TeacherController::class,'updateTeacher'])->n
 Route::get('/delete/teacher{id}',[TeacherController::class,'deleteTeacher'])->name('deleteTeacher');
 
 
-Route::get('upload',[UploadController::class,'index'])->name('upload.show');
-Route::post('upload',[UploadController::class,'upload'])->name('upload');
-Route::get('books',[BookController::class,'index'])->name('books.show');
-Route::get('books/send-for-sale/{bookId}',[BookController::class,'sendForSale'])->name('books.sale');
-Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
-Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
 

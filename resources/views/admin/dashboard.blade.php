@@ -43,11 +43,11 @@
                                 $teacher=DB::table('teachers')->count();
                             @endphp
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                All Teacher's </div>
+                                All Trainer's </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">({{ $teacher }})</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -70,17 +70,10 @@
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">({{ $admin }})</div>
                                 </div>
-                                <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar"
-                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                             aria-valuemax="100"></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -98,7 +91,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">( 2500 tk)</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -114,7 +107,7 @@
             <h2 class="card-title">Total fee</h2>
             <div class="amount-column-wrapper wrapper">
               <p class="total-performance">BDT {{ $student * 2500 }} </p>
-              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -122,9 +115,19 @@
             <div class="card w-100">
              <div class="card-body">
                <h2 class="card-title">Learning Management System</h2>
-               <div class="amount-column-wrapper wrapper">
+                <div class="amount-column-wrapper wrapper">
                  <p class="">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                  </div>
+
+                 <div class="col">
+                    <div class="progress progress-sm mr-2">
+                        <div class="progress-bar bg-info" role="progressbar"
+                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+
                </div>
              </div>
            </div>

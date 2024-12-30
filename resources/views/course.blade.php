@@ -168,7 +168,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                    <h5>ANDROID APP DEVELOPMENT</h5>
+                <h5>ANDROID APP DEVELOPMENT</h5>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
                                         <ul class="depName">
                                             <li class="dropdown">
@@ -254,7 +254,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                <h5>Basic COURSES</h5>
+                <h5>BASIC COURSES</h5>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
                                         <ul class="depName">
                                             <li class="dropdown">
@@ -283,7 +283,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                    <h5>CYBER SECURITY</h5>
+                <h5>CYBER SECURITY</h5>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
                                         <ul class="depName">
                                             <li class="dropdown">

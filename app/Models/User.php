@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cashout::class);
     }
+    public function googleAccount()
+    {
+        return $this->hasOne(GoogleAccount::class);
+    }
+
 }

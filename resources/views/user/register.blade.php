@@ -34,27 +34,20 @@
                         <p>Already Have An Account? <a class="text-info" href="{{ url('/login') }}">Login Here</a></p>
                     </div>
                     <hr>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center border rounded shadow-sm w-100" style="padding: 10px 20px;">
-                            <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">
-                            <span>Continue with Google</span>
-                        </button>
-                    </div>
-                    {{-- <div class="d-flex justify-content-center mt-4">
-                        <button type="submit"
-                                class="btn btn-light d-flex align-items-center justify-content-center border shadow-sm"
-                                style="padding: 10px 20px; border-radius: 25px; width: fit-content;">
-                            <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">
-                            <span>Continue with Google</span>
-                        </button>
-                    </div> --}}
-
-
-
                 </form>
+
+                <!-- Google Login -->
+               {{-- <div class="text-center">
+                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center border rounded shadow-sm w-100" style="padding: 10px 20px;">
+                    <a href="{{ route('googleLogin') }}">
+                    <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">
+                    <span>Continue with Google</span>
+                    </a>
+                </button>
+              </div> --}}
+
             </div>
         </div>
-
     </div>
 @endsection
 
@@ -62,3 +55,11 @@
 
 @endpush
 
+{{-- <div class="d-flex justify-content-center mt-4">
+                        <button type="submit"
+                                class="btn btn-light d-flex align-items-center justify-content-center border shadow-sm"
+                                style="padding: 10px 20px; border-radius: 25px; width: fit-content;">
+                            <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">
+                            <span>Continue with Google</span>
+                        </button>
+                    </div> --}}
