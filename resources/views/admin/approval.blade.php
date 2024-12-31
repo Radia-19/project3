@@ -26,7 +26,7 @@
                 @forelse($pendingbooks as $book)
                   <tr>
                     <th scope="row">{{ $book->id }}</th>
-                    <td><img src="{{ asset('uploads').'/'.$book->book }}" style="height: 150px; width: 150px;"></td>
+                    <td><a href="{{ asset('uploads').'/'.$book->book }}" target="_blank"></a>Download</td>
                     <td>{{ $book->user->username }}</td>
                     <td>{{{ date('Y-m-d',strtotime($book->created_at)) }}}</td>
                     <td>

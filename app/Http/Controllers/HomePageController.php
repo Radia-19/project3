@@ -39,6 +39,7 @@ class HomePageController extends Controller
 
         $randomBooks = Book::with('user')
         ->inRandomOrder()
+        ->where('status', 'approved')
         ->paginate(10);
 
         return view("file", compact("randomBooks"));
@@ -50,7 +51,7 @@ class HomePageController extends Controller
 
             $allTasks = Task::paginate(5);
         } else {
-          
+
             //$allTasks = Task::where('user_id', Auth::id())->paginate(5);
         }
 

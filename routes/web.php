@@ -39,9 +39,9 @@ Route::get('task/delete/{id}',[TaskManagerController::class,'delete'])->name('ta
 Route::get('upload',[UploadController::class,'index'])->name('upload.show');
 Route::post('upload',[UploadController::class,'upload'])->name('upload');
 Route::get('books',[BookController::class,'index'])->name('books.show');
-Route::get('books/send-for-sale/{bookId}',[BookController::class,'sendForSale'])->name('books.sale');
-Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
-Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
+Route::get('books/approved/{bookId}',[BookController::class,'approved'])->name('book.approved');
+// Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
+// Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
 
 
 // User Authentication
@@ -68,10 +68,10 @@ Route::prefix('admin')->group(function () {
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('admin.dashboard');
     Route::get('approval',[AdminDashboardController::class,'approveShow'])->name('admin.approval.show');
     Route::get('approval/updatestatus/{bookId}/{status}',[AdminDashboardController::class,'bookApproveStatusUpdate'])->name('admin.approval.update');
-    Route::get('buyout',[AdminDashboardController::class,'buyOutShow'])->name('admin.buyout.show');
-    Route::post('buyout/update',[AdminDashboardController::class,'buyOut'])->name('admin.buyout.update');
-    Route::get('cashouts',[AdminDashboardController::class,'showCashouts'])->name('admin.cashout.show');
-    Route::get('cashouts/updat/{cashout_Id}/{status}',[AdminDashboardController::class,'updateCashouts'])->name('admin.cashout.update');
+    // Route::get('buyout',[AdminDashboardController::class,'buyOutShow'])->name('admin.buyout.show');
+    // Route::post('buyout/update',[AdminDashboardController::class,'buyOut'])->name('admin.buyout.update');
+    // Route::get('cashouts',[AdminDashboardController::class,'showCashouts'])->name('admin.cashout.show');
+    // Route::get('cashouts/updat/{cashout_Id}/{status}',[AdminDashboardController::class,'updateCashouts'])->name('admin.cashout.update');
 });
 
 

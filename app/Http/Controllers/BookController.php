@@ -14,14 +14,14 @@ class BookController extends Controller
        $books = Book::where('user_id',Auth::id())->paginate(3); //ELOQUENT + QUERY BUILDER
        return view('books',compact('books'));
     }
-    public function sendForSale($bookId)
+    public function approved($bookId)
     {
         $book = Book::findOrFail($bookId);
 
         if($book->user_id == Auth::id()){
 
             $book->update([
-                  'status' => 'selling'
+                  'status' => 'Approved'
             ]);
             return redirect()->back();
         }else{

@@ -19,7 +19,7 @@ class UploadController extends Controller
         $validated = $request->validate([
             'name'=> 'required|unique:books,name',
             'details'=> 'required',
-            'book' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx|max:7000',
+            'book' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,jpeg,png|max:15360',
             ]);
 
 

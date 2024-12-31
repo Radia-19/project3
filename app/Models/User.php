@@ -48,20 +48,11 @@ class User extends Authenticatable
         ];
     }
 
-    public function financial()
-    {
-        return $this->hasOne(Financial::class);
-    }
-
     public function books()
     {
         return $this->hasMany(Book::class);
     }
 
-    public function cashout()
-    {
-        return $this->hasMany(Cashout::class);
-    }
     public function googleAccount()
     {
         return $this->hasOne(GoogleAccount::class);

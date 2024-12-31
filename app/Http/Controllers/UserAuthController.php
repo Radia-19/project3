@@ -79,7 +79,7 @@ class UserAuthController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => bcrypt($request->password)
-        ])->financial()->create();;
+        ]);
         });
          return to_route('login.show')->with('okMsg','Registered Successfully! Login Now ');
 
