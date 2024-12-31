@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Book;
+use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomePageController extends Controller
 {
     public function index(){
-
-        $randomBooks = Book::with('user')
-                        ->inRandomOrder()
-                        ->paginate(10);
-
-        return view("home", compact("randomBooks"));
+        return view("home");
     }
     public function about(){
         return view("about");
@@ -37,5 +34,26 @@ class HomePageController extends Controller
             ->get();
 
         return view('search-results', compact('results', 'query'));
+    }
+    public function file(Request $request){
+
+        $randomBooks = Book::with('user')
+        ->inRandomOrder()
+        ->paginate(10);
+
+        return view("file", compact("randomBooks"));
+    }
+    public function task()
+    {
+        //$allTasks = Task::where('user_id',Auth::id())->paginate(5);
+        if (Auth::user()->role === 'trainer' || Auth::user()->role === 'user') {
+
+            $allTasks = Task::paginate(5);
+        } else {
+          
+            //$allTasks = Task::where('user_id', Auth::id())->paginate(5);
+        }
+
+        return view('task', compact('allTasks'));
     }
 }

@@ -11,10 +11,6 @@ class BookController extends Controller
 {
     public function index(){
 
-       //$books = User::findOrFail(Auth::id())->Book()->paginate(10); //ELOQUENT
-       //$books = User::Auth::user()->Book()->paginate(10); //ELOQUENT
-       //dd(Book::getTable(), Book::where('name', 'Atomic Habit')->count());
-
        $books = Book::where('user_id',Auth::id())->paginate(3); //ELOQUENT + QUERY BUILDER
        return view('books',compact('books'));
     }

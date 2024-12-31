@@ -35,13 +35,13 @@
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                        <h5 class="mb-3">Home Projects</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                            <h5 class="mb-3">Home Projects</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
                     </div>
-                </div>
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="service-item text-center pt-3">
@@ -99,19 +99,6 @@
 </div>
 <!-- About End -->
 
-<!-- Library Start -->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            @foreach($randomBooks as $book)
-            <div class="col mb-5">
-                <x-card :bookName="$book->name" :bookDetails="$book->details" :book="$book->book"/>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-<!-- Library Start -->
 
 <!-- Categories Start -->
 <div class="container-xxl py-5 category">
@@ -299,9 +286,44 @@
 <!-- Testimonial End -->
 
 
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            @if(Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'trainer'))
+                <a href="{{ route('task') }}">
+            <div class="service-item text-center pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                    <h5 class="mb-3">Task</h5>
+                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                </div>
+            </div>
+                </a>
+                @endif
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            @if(Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'trainer'))
+               <a href="{{ route('file') }}">
+            <div class="service-item text-center pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                    <h5 class="mb-3">Files</h5>
+                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                </div>
+            </div>
+            </a>
+             @endif
+        </div>
+    </div>
+</div>
+
 
 @endsection
 
 @push('css')
 
 @endpush
+
+
+
+

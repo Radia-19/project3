@@ -33,9 +33,10 @@
                 </a>
             @elseif (Auth::user()->role === 'trainer')
                 <!-- Trainer Navigation -->
+                <a href="{{ route('task.create.show') }}" class="nav-item nav-link">Task</a>
                 <a href="{{ route('upload.show') }}" class="nav-item nav-link">Upload</a>
+                <a href="{{ route('books.show') }}" class="nav-item nav-link">Files</a>
                 <a href="{{ route('myFinancial.show') }}" class="nav-item nav-link">Financial</a>
-                <a href="{{ route('books.show') }}" class="nav-item nav-link">Books</a>
                 <a href="{{ route('logout') }}" class="nav-item nav-link pe-3 me-5">
                     ({{ Auth::user()->username }}) Logout
                 </a>

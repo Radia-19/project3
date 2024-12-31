@@ -17,12 +17,12 @@ class UploadController extends Controller
     public function upload(Request $request )
     {
         $validated = $request->validate([
-            'name'=> 'required|unique:photos,name',
+            'name'=> 'required|unique:books,name',
             'details'=> 'required',
-            'book' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx|max:2048',
+            'book' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx|max:7000',
             ]);
 
-       
+
         $bookName = uniqid().sha1(rand(100,9000)).'.'.request()->file('book')->extension();
         \request()->file('book')->move(public_path('uploads/'),$bookName);
         Book::create([

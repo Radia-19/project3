@@ -15,8 +15,8 @@
             <table class="table table-info table-hover table-bordered text-dark">
                 <thead>
                   <tr>
-                    <th scope="col">Book Id</th>
-                    <th scope="col">Book</th>
+                    <th scope="col">File Id</th>
+                    <th scope="col">File</th>
                     <th scope="col">User</th>
                     <th scope="col">Upload Date</th>
                     <th scope="col">Action</th>

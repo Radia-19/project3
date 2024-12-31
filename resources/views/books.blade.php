@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Books')
+@section('title','Files')
 
 @push('css')
 
@@ -12,7 +12,7 @@
        <div class="row">
         <div class="col-8 offset-2 mt-4">
             @include('errors.error')
-             Books :
+            Files :
              <hr>
 
                 <!-- Section-->

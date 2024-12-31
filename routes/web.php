@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\TaskManagerController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\FinancialController;
@@ -18,6 +19,8 @@ Route::get('/about', [HomePageController::class,'about'])->name('about');
 Route::get('/course', [HomePageController::class,'course'])->name('course');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
 Route::get('/search', [HomePageController::class,'search'])->name('search');
+Route::get('/file', [HomePageController::class,'file'])->name('file');
+Route::get('/task', [HomePageController::class,'task'])->name('task');
 
 //Users
 Route::get('enroll',[UploadController::class,'enroll'])->name('enroll.show');
@@ -26,6 +29,13 @@ Route::get('payment',[FinancialController::class,'payment'])->name('payment.show
 Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
 
 //Trainers
+Route::get('task/create',[TaskManagerController::class,'create'])->name('task.create.show');
+Route::post('task/create',[TaskManagerController::class,'store'])->name('task.create');
+Route::get('task/edit/{id}',[TaskManagerController::class,'show'])->name('task.show');
+Route::post('task/edit/{id}',[TaskManagerController::class,'update'])->name('task.update');
+Route::get('task/edit/{id}/{status}',[TaskManagerController::class,'updateStatus'])->name('task.updateStatus');
+Route::get('task/delete/{id}',[TaskManagerController::class,'delete'])->name('task.delete');
+
 Route::get('upload',[UploadController::class,'index'])->name('upload.show');
 Route::post('upload',[UploadController::class,'upload'])->name('upload');
 Route::get('books',[BookController::class,'index'])->name('books.show');

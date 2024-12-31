@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Books Store')
+@section('title','Files')
 
 @push('css')
 
@@ -13,11 +13,11 @@
 
            <div class="col-8 offset-2 mt-4">
             @include('errors.error')
-             Upload Books :
+             Upload Files :
              <hr>
              <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <label class="form-label mt-3">Book/File Title:</label>
+                <label class="form-label mt-3">File Title:</label>
                 <input class="form-control" type="text" name="name">
                 <label class="form-label mt-2">Details:</label>
                 <input class="form-control" type="text" name="details">
