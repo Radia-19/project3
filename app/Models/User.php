@@ -53,9 +53,5 @@ class User extends Authenticatable
         return $this->hasMany(Book::class);
     }
 
-    public function googleAccount()
-    {
-        return $this->hasOne(GoogleAccount::class);
-    }
 
 }

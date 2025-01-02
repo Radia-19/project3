@@ -41,14 +41,18 @@
                </form>
 
                <!-- Google Login -->
-               <div class="text-center">
-                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center border rounded shadow-sm w-100" style="padding: 10px 20px;">
-                    <a href="{{ route('googleLogin') }}">
-                    <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">
-                    <span>Continue with Google</span>
-                    </a>
-                </button>
-              </div>
+                <div class="text-center">
+                    <button
+                        type="button"
+                        onclick="window.location.href='{{ route('googleLogin') }}'"
+                        class="btn btn-light d-flex align-items-center justify-content-center border rounded shadow-sm w-100"
+                        style="padding: 10px 20px;">
+                        <img class="me-2" style="height: 25px;" src="{{ asset('image/icons8-google-48.png') }}" alt="Google Icon">
+                        <span>Continue with Google</span>
+                    </button>
+                </div>
+
+
            </div>
        </div>
 

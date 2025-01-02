@@ -6,12 +6,12 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\TaskManagerController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\FinancialController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AddStudentController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\SocialiteController;
 
 // Home Page
 Route::get('/', [HomePageController::class,'index'])->name('home');
@@ -25,8 +25,8 @@ Route::get('/task', [HomePageController::class,'task'])->name('task');
 //Users
 Route::get('enroll',[UploadController::class,'enroll'])->name('enroll.show');
 Route::post('enroll',[UploadController::class,'enroll'])->name('enroll');
-Route::get('payment',[FinancialController::class,'payment'])->name('payment.show');
-Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
+// Route::get('payment',[FinancialController::class,'payment'])->name('payment.show');
+// Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
 
 //Trainers
 Route::get('task/create',[TaskManagerController::class,'create'])->name('task.create.show');
@@ -51,20 +51,21 @@ Route::get('logout', [UserAuthController::class,'logout'])->name('logout');
 Route::get('register', [UserAuthController::class,'showRegister'])->name('register.show');
 Route::post('register', [UserAuthController::class,'register'])->name('register');
 
-Route::get('google-login/google',[UserAuthController::class,'redirectTogoogle'])->name('googleLogin');
-Route::get('google-login/google/callback',[UserAuthController::class,'handleGoogleCallback'])->name('googleCallback');
+Route::get('google-login/google',[SocialiteController::class,'redirectTogoogle'])->name('googleLogin');
+Route::get('google-login/google/callback',[SocialiteController::class,'handleGoogleCallback'])->name('googleCallback');
 
 // Admin Authentication
-Route::prefix('admin')->group(function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+//Route::middleware(['admin'])->group(function() {
+//Route::prefix('admin')->group(function () {
     Route::get('login', [AdminAuthController::class,'showLogin'])->name('admin.login.show');
     Route::post('login', [AdminAuthController::class,'login'])->name('admin.login');
     Route::get('logout', [AdminAuthController::class,'logout'])->name('admin.logout');
-    });
+});
 
 // Admin Functionality
-//Route::group(['prefix' => 'admin', 'middleware' => 'adminAuth'], function () {
+//Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 Route::prefix('admin')->group(function () {
-
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('admin.dashboard');
     Route::get('approval',[AdminDashboardController::class,'approveShow'])->name('admin.approval.show');
     Route::get('approval/updatestatus/{bookId}/{status}',[AdminDashboardController::class,'bookApproveStatusUpdate'])->name('admin.approval.update');

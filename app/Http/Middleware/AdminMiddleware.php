@@ -2,13 +2,14 @@
 
 namespace App\Http\Middleware;
 
+
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\Response;
 
-class UserAuthCheckMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,13 +18,12 @@ class UserAuthCheckMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        Log::info('UserAuthCheckMiddleware executed for route: ' . $request->path());
-        if(Auth::check()){
+        if (Auth::guard('admin')->check()) {
+            Log::info('Admin is logged in.');
             return $next($request);
-        }else{
-            Log::warning('Unauthenticated access attempt to: ' . $request->path());
-            return to_route('login.show')->with('errMsg','You Must Login First!');
+        } else {
+            Log::info('Admin is NOT logged in.');
+            return redirect()->route('admin.login.show');
         }
-
     }
 }
