@@ -2,7 +2,7 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center ps-5 ms-4">
-        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>LMS</h2>
+        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i><small>Learning Management System</small>(LMS)</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
             @if (Auth::user()->role === 'user')
                 <!-- User Navigation -->
                 <a href="{{ route('enroll.show') }}" class="nav-item nav-link">Enrollment</a>
-                <a href="{{ route('payment.show') }}" class="nav-item nav-link">Payment</a>
+                {{-- <a href="{{ route('payment.show') }}" class="nav-item nav-link">Payment</a> --}}
                 <a href="{{ route('logout') }}" class="nav-item nav-link pe-3 me-5">
                     ({{ Auth::user()->username }}) Logout
                 </a>

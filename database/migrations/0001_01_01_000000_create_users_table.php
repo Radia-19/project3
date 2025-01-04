@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->enum( 'role',['user','trainer'])->default('user');
             $table->string('google_id')->nullable()->unique();
-            $table->string('profile_picture')->nullable();
+            $table->string('profile_picture', 2048)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
