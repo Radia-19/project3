@@ -34,7 +34,7 @@ class AdminDashboardController extends Controller
 
             if ($status === 'approved') {
                 $data['approve_by'] = Auth::guard('admin')->id();
-                $data['approve_date'] = now(); 
+                $data['approve_date'] = now();
             }
 
             $book->update($data);

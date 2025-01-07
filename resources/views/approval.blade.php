@@ -1,7 +1,7 @@
-@extends('layouts.adminLayout')
+@extends('layouts.userLayout')
 
 @section('content')
-
+<div class="container">
     <!-- Content Row -->
     <div class="row">
         <div class="col-12">
@@ -30,8 +30,8 @@
                     <td>{{ $book->user->username }}</td>
                     <td>{{{ date('Y-m-d',strtotime($book->created_at)) }}}</td>
                     <td>
-                        <a class="btn btn-outline-success" onclick="return confirm('Are you sure?')" href="{{ route('admin.approval.update',[$book->id,'approved']) }}">Approve</a>
-                        <a class="btn btn-outline-danger" onclick="return confirm('Are you sure?')" href="{{ route('admin.approval.update',[$book->id,'declined']) }}">Decline</a>
+                        <a class="btn btn-outline-success" onclick="return confirm('Are you sure?')" href="{{ route('approval.update',[$book->id,'approved']) }}">Approve</a>
+                        <a class="btn btn-outline-danger" onclick="return confirm('Are you sure?')" href="{{ route('approval.update',[$book->id,'declined']) }}">Decline</a>
                     </td>
                   </tr>
                 @empty
@@ -44,6 +44,6 @@
               {{ $pendingbooks->links() }}
         </div>
     </div>
-
+</div>
 
 @endsection

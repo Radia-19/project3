@@ -22,11 +22,11 @@
             <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
             <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
             <a href="{{ route('course') }}" class="nav-item nav-link">Courses</a>
-            <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
+            
             @if(Auth::check())
             @if (Auth::user()->role === 'user')
                 <!-- User Navigation -->
-                <a href="{{ route('enroll.show') }}" class="nav-item nav-link">Enrollment</a>
+                <a href="{{ route('addStudent') }}" class="nav-item nav-link">Enrollment</a>
                 {{-- <a href="{{ route('payment.show') }}" class="nav-item nav-link">Payment</a> --}}
                 <a href="{{ route('logout') }}" class="nav-item nav-link pe-3 me-5">
                     ({{ Auth::user()->username }}) Logout
@@ -34,9 +34,14 @@
             @elseif (Auth::user()->role === 'trainer')
                 <!-- Trainer Navigation -->
                 <a href="{{ route('task.create.show') }}" class="nav-item nav-link">Task</a>
-                <a href="{{ route('upload.show') }}" class="nav-item nav-link">Upload</a>
-                <a href="{{ route('books.show') }}" class="nav-item nav-link">Files</a>
-                {{-- <a href="{{ route('myFinancial.show') }}" class="nav-item nav-link">Financial</a> --}}
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Files</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ route('upload.show') }}" class="dropdown-item">Upload</a>
+                        <a href="{{ route('books.show') }}" class="dropdown-item">All Files</a>
+                        <a href="{{ route('approval.show') }}" class="dropdown-item">Approval</a>
+                    </div>
+                </div>
                 <a href="{{ route('logout') }}" class="nav-item nav-link pe-3 me-5">
                     ({{ Auth::user()->username }}) Logout
                 </a>

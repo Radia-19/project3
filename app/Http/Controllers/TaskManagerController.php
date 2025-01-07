@@ -32,7 +32,7 @@ class TaskManagerController extends Controller
               'user_id' => Auth::id(), // Add user_id here
            ]);
         });
-        return to_route('home')->with('success', 'Task added successfully');
+        return to_route('task')->with('success', 'Task added successfully');
 
     }
     public function show($id)
@@ -55,7 +55,7 @@ class TaskManagerController extends Controller
             'details' => $request->input('details'),
         ]);
 
-        return to_route('home')->with('success', 'Task updated successfully');
+        return to_route('task')->with('success', 'Task updated successfully');
     }
 
     public function updateStatus($id,$status)
@@ -63,9 +63,9 @@ class TaskManagerController extends Controller
         $task = Task::findOrFail($id);
 
         $task->update([
-                'status' => $status
+            'status' => $status
         ]);
-        return to_route('home')->with('success', 'Task status updated');
+        return to_route('task')->with('success', 'Task status updated');
     }
     public function delete($id)
     {

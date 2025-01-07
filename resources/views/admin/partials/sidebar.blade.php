@@ -25,30 +25,28 @@
     <hr class="sidebar-divider">
 
 
+    <!-- Heading -->
     <div class="sidebar-heading">
-        Files
-    </div>
+        Information
+     </div>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
            <i class="fa fa-users mr-2"></i>
-            <span>Files Info</span>
+            <span>Enrollment Info</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">All Files</h6>
-                <a class="collapse-item" href="{{ route('admin.approval.show') }}"><i class="bi bi-door-open-fill"></i> Approval</a>
+                <h6 class="collapse-header">All Enrollments</h6>
+                {{-- <a class="collapse-item" href="{{ route('admin.approval.show') }}"><i class="bi bi-door-open-fill"></i> Approval</a> --}}
                 {{-- <a class="collapse-item" href="{{ route('admin.buyout.show') }}"><i class="bi bi-bag-heart-fill"></i> Buyout</a>
                 <a class="collapse-item" href="{{ route('admin.cashout.show') }}"><i class="bi bi-cash-coin"></i> Cashout</a>
             </div> --}}
         </div>
     </li>
-    <!-- Heading -->
-    <div class="sidebar-heading">
-       Information
-    </div>
+
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
@@ -87,7 +85,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Students</h6>
                 <a class="collapse-item" href="{{ route('allStudents') }}">All Students</a>
-                <a class="collapse-item" href="{{ route('addStudent') }}">Add Student</a>
+                {{-- <a class="collapse-item" href="{{ route('addStudent') }}">Add Student</a> --}}
             </div>
         </div>
     </li>

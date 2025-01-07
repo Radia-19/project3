@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\TaskManagerController;
-use App\Http\Controllers\UploadController;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AddStudentController;
@@ -19,16 +18,9 @@ Route::get('/about', [HomePageController::class,'about'])->name('about');
 Route::get('/course', [HomePageController::class,'course'])->name('course');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
 Route::get('/search', [HomePageController::class,'search'])->name('search');
-Route::get('/file', [HomePageController::class,'file'])->name('file');
-Route::get('/task', [HomePageController::class,'task'])->name('task');
-
-//Users
-Route::get('enroll',[UploadController::class,'enroll'])->name('enroll.show');
-Route::post('enroll',[UploadController::class,'enroll'])->name('enroll');
-// Route::get('payment',[FinancialController::class,'payment'])->name('payment.show');
-// Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
 
 //Trainers
+Route::get('/task', [HomePageController::class,'task'])->name('task');
 Route::get('task/create',[TaskManagerController::class,'create'])->name('task.create.show');
 Route::post('task/create',[TaskManagerController::class,'store'])->name('task.create');
 Route::get('task/edit/{id}',[TaskManagerController::class,'show'])->name('task.show');
@@ -36,12 +28,24 @@ Route::post('task/edit/{id}',[TaskManagerController::class,'update'])->name('tas
 Route::get('task/edit/{id}/{status}',[TaskManagerController::class,'updateStatus'])->name('task.updateStatus');
 Route::get('task/delete/{id}',[TaskManagerController::class,'delete'])->name('task.delete');
 
-Route::get('upload',[UploadController::class,'index'])->name('upload.show');
-Route::post('upload',[UploadController::class,'upload'])->name('upload');
-Route::get('books',[BookController::class,'index'])->name('books.show');
-Route::get('books/approved/{bookId}',[BookController::class,'approved'])->name('book.approved');
+Route::get('/file', [HomePageController::class,'file'])->name('file');
+Route::get('upload',[FileController::class,'create'])->name('upload.show');
+Route::post('upload',[FileController::class,'upload'])->name('upload');
+Route::get('books',[FileController::class,'index'])->name('books.show');
+Route::get('books/approved/{bookId}',[FileController::class,'approved'])->name('book.approved');
+Route::get('approval',[FileController::class,'approveShow'])->name('approval.show');
+Route::get('approval/updatestatus/{bookId}/{status}',[FileController::class,'bookApproveStatusUpdate'])->name('approval.update');
 // Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
 // Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
+
+
+
+//Users
+// Route::get('enroll',[UploadController::class,'enroll'])->name('enroll.show');
+// Route::post('enroll',[UploadController::class,'enroll'])->name('enroll');
+// Route::get('payment',[FinancialController::class,'payment'])->name('payment.show');
+// Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
+
 
 
 // User Authentication
@@ -50,7 +54,6 @@ Route::post('login', [UserAuthController::class,'login'])->name('login');
 Route::get('logout', [UserAuthController::class,'logout'])->name('logout');
 Route::get('register', [UserAuthController::class,'showRegister'])->name('register.show');
 Route::post('register', [UserAuthController::class,'register'])->name('register');
-
 Route::get('google-login/google',[SocialiteController::class,'redirectTogoogle'])->name('googleLogin');
 Route::get('google-login/google/callback',[SocialiteController::class,'handleGoogleCallback'])->name('googleCallback');
 
@@ -67,8 +70,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 //Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 Route::prefix('admin')->group(function () {
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('admin.dashboard');
-    Route::get('approval',[AdminDashboardController::class,'approveShow'])->name('admin.approval.show');
-    Route::get('approval/updatestatus/{bookId}/{status}',[AdminDashboardController::class,'bookApproveStatusUpdate'])->name('admin.approval.update');
+    // Route::get('approval',[AdminDashboardController::class,'approveShow'])->name('admin.approval.show');
+    // Route::get('approval/updatestatus/{bookId}/{status}',[AdminDashboardController::class,'bookApproveStatusUpdate'])->name('admin.approval.update');
     // Route::get('buyout',[AdminDashboardController::class,'buyOutShow'])->name('admin.buyout.show');
     // Route::post('buyout/update',[AdminDashboardController::class,'buyOut'])->name('admin.buyout.update');
     // Route::get('cashouts',[AdminDashboardController::class,'showCashouts'])->name('admin.cashout.show');

@@ -2,7 +2,7 @@
     {{-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> --}}
 
     <!-- Product book-->
-    <img class="card-img-top" src="{{ asset('uploads').'/'.$book }}" alt="..." />
+    {{-- <img class="card-img-top" src="{{ asset('uploads').'/'.$book }}" alt="..." /> --}}
     <!-- Product details-->
     <div class="card-body p-4">
         <div class="text-center">

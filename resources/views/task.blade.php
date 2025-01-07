@@ -11,16 +11,19 @@
             @if(session('success'))
                 <p class="alert alert-success">{{ session('success') }}</p>
             @endif
-
+            @if($allTasks->isEmpty())
+                <p class="alert alert-warning">No tasks available.</p>
+            @else
             @foreach($allTasks as $task)
              {{-- <div class="card text-bg-light @if($task->status == 'pending')text-bg-light @else bg-info @endif mb-3"> --}}
-                <div class="card text-black @if($task->status == 'pending') bg-light @else bg-info @endif mb-3">
+                {{-- <div class="card text-black @if($task->status == 'pending') bg-light @else bg-info @endif mb-3"> --}}
+                <div class="card text-black {{ $task->status == 'pending' ? 'bg-light' : 'bg-info' }} mb-3">
                     <div class="card-header">
                      Task ID: {{ $task->id }}
                      <div class="float-end">
                         @if(Auth::user()->role === 'trainer')
                         @if($task->status == 'pending')
-                            <a class="btn btn-info btn-sm me-2" href="{{ route('task.updateStatus',[$task->id,'complete']) }}">Mark as complete</a>
+                            <a class="btn btn-info btn-sm me-2" href="{{ route('task.updateStatus',[$task->id,'completed']) }}">Mark as complete</a>
                         @else
                             <a class="btn btn-danger btn-sm me-2" href="{{ route('task.updateStatus',[$task->id,'pending']) }}">Back to pending</a>
                         @endif
@@ -37,7 +40,7 @@
             @endforeach
 
             {{ $allTasks->links() }}
-
+            @endif
         </div>
     </div>
 </div>
