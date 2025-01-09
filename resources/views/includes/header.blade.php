@@ -1,4 +1,9 @@
-
+<style>
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+    }
+</style>
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center ps-5 ms-4">
@@ -7,10 +12,9 @@
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <form action="{{ route('search') }}" method="GET" class="d-flex align-items-center">
+    <form id="search-form" class="d-flex align-items-center">
         <!-- Hidden input field -->
-        <input type="text" name="query" id="query-input" class="form-control me-2 search-input" placeholder="Type to search...">
-
+        <input type="text" name="query" id="search-input" class="form-control me-2 search-input" placeholder="Type to search...">
         <!-- Search button -->
         <button type="submit" id="search-button" class="btn p-0">
             <img style="height: 35px; width: 35px;" src="{{ asset('image/icons8-search-64.png') }}" alt="Search">
@@ -39,7 +43,7 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ route('upload.show') }}" class="dropdown-item">Upload</a>
                         <a href="{{ route('books.show') }}" class="dropdown-item">All Files</a>
-                        <a href="{{ route('approval.show') }}" class="dropdown-item">Approval</a>
+                        {{-- <a href="{{ route('approval.show') }}" class="dropdown-item">Approval</a> --}}
                     </div>
                 </div>
                 <a href="{{ route('logout') }}" class="nav-item nav-link pe-3 me-5">
@@ -59,15 +63,56 @@
 </nav>
 <!-- Navbar End -->
 
-@push('js')
 
+@push('js')
 <script>
-document.getElementById('search-button').addEventListener('click', function (e) {
-    const queryInput = document.getElementById('query-input');
-    if (!queryInput.value.trim()) {
-        e.preventDefault();
-        alert('Please enter a search term.');
-    }
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('search-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get the search query
+            const queryInput = document.getElementById('search-input');
+            const query = queryInput.value.trim().toLowerCase();
+
+            // if (!query) {
+            //     alert('Please enter a search term.');
+            //     return;
+            // }
+
+            // Get all paragraphs inside #content
+            const paragraphs = document.querySelectorAll('#content p');
+
+            let found = false; // To check if a match is found
+
+            paragraphs.forEach(paragraph => {
+                if (found) return; // Stop after the first match
+
+                const text = paragraph.textContent.toLowerCase();
+                const index = text.indexOf(query);
+
+                if (index !== -1) {
+                    found = true;
+
+                    // Scroll to the matched paragraph
+                    paragraph.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Highlight the matched word
+                    const originalHTML = paragraph.innerHTML;
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    paragraph.innerHTML = originalHTML.replace(regex, '<span class="highlight">$1</span>');
+
+                    // Optional: Remove the highlight after a delay
+                    setTimeout(() => {
+                        paragraph.innerHTML = originalHTML;
+                    }, 2000);
+                }
+            });
+
+            if (!found) {
+                alert(`No match found for "${query}".`);
+            }
+        });
+    });
 </script>
 @endpush
+

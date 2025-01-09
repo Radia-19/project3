@@ -32,9 +32,12 @@ Route::get('/file', [HomePageController::class,'file'])->name('file');
 Route::get('upload',[FileController::class,'create'])->name('upload.show');
 Route::post('upload',[FileController::class,'upload'])->name('upload');
 Route::get('books',[FileController::class,'index'])->name('books.show');
-Route::get('books/approved/{bookId}',[FileController::class,'approved'])->name('book.approved');
-Route::get('approval',[FileController::class,'approveShow'])->name('approval.show');
-Route::get('approval/updatestatus/{bookId}/{status}',[FileController::class,'bookApproveStatusUpdate'])->name('approval.update');
+Route::get('books/edit/{id}',[FileController::class,'show'])->name('updatebooks.show');
+Route::post('books/edit/{id}',[FileController::class,'update'])->name('books.update');
+Route::get('books/delete/{id}',[FileController::class,'delete'])->name('books.delete');
+// Route::get('books/approved/{bookId}',[FileController::class,'approved'])->name('book.approved');
+// Route::get('approval',[FileController::class,'approveShow'])->name('approval.show');
+// Route::get('approval/updatestatus/{bookId}/{status}',[FileController::class,'bookApproveStatusUpdate'])->name('approval.update');
 // Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
 // Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
 

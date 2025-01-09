@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Task Edit')
+@section('title','File Edit')
 
 @section('content')
 

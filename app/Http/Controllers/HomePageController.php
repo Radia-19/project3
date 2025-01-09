@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Book;
 use App\Models\Task;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,24 +25,23 @@ class HomePageController extends Controller
     }
     public function search(Request $request)
     {
-        $query = trim($request->query('query'));
-        //dd($query);
-        if (!$query) {
-            return redirect()->back()->with('error', 'Please enter a search term.');
+        $query = $request->input('query'); // Get the search query
+
+        // If query is provided, filter articles, otherwise return all
+        if ($query) {
+            $articles = Article::where('content', 'like', '%' . $query . '%')->get();
+        } else {
+            $articles = Article::all();
         }
-        \Log::info("Search query: {$query}");
 
-        $results = Task::where('name', 'LIKE', "%{$query}%")->get();
-
-            \Log::info("Search results: " . $results->toJson());
-        return view('search-results', compact('results', 'query'));
+        return view('search-results', compact('articles'));
     }
+
 
     public function file(Request $request){
 
         $randomBooks = Book::with('user')
         ->inRandomOrder()
-        ->where('status', 'approved')
         ->paginate(10);
 
         return view("file", compact("randomBooks"));

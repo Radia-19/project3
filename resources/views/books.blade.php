@@ -21,8 +21,9 @@
                         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
                             @foreach($books as $book)
                             <div class="col mb-5">
-                                <x-card :bookData="$book" :bookName="$book->name" :bookDetails="$book->details" :book="$book->book" :status="$book->status" />
+                                <x-card :bookData="$book" :bookName="$book->name" :bookDetails="$book->details" :book="$book->book" />
                             </div>
+
                             @endforeach
                         </div>
                         {{ $books->links() }}
