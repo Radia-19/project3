@@ -212,7 +212,7 @@
                         </div>
                     </div>
                     <div class="text-center p-4">
-                        <h5 class="mb-0">Turhan Khan</h5>
+                        <h5 class="mb-0">Afsar Alam</h5>
                         <small>Security Specialist</small>
                     </div>
                 </div>

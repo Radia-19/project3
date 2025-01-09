@@ -24,17 +24,19 @@ class HomePageController extends Controller
     }
     public function search(Request $request)
     {
-        $query = $request->input('query', ''); // Default value if no query is provided
-        if (empty($query)) {
+        $query = trim($request->query('query'));
+        //dd($query);
+        if (!$query) {
             return redirect()->back()->with('error', 'Please enter a search term.');
         }
+        \Log::info("Search query: {$query}");
 
-        $results = User::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('email', 'LIKE', "%{$query}%")
-            ->get();
+        $results = Task::where('name', 'LIKE', "%{$query}%")->get();
 
+            \Log::info("Search results: " . $results->toJson());
         return view('search-results', compact('results', 'query'));
     }
+
     public function file(Request $request){
 
         $randomBooks = Book::with('user')

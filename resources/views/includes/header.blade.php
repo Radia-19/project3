@@ -7,13 +7,13 @@
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <form action="/search" method="GET" class="d-flex align-items-center">
+    <form action="{{ route('search') }}" method="GET" class="d-flex align-items-center">
         <!-- Hidden input field -->
         <input type="text" name="query" id="query-input" class="form-control me-2 search-input" placeholder="Type to search...">
 
         <!-- Search button -->
-        <button type="button" id="search-button" class="btn p-0">
-            <img style="height: 35px; width: 35px;" src="{{ asset('image/icons8-search-64.png') }}">
+        <button type="submit" id="search-button" class="btn p-0">
+            <img style="height: 35px; width: 35px;" src="{{ asset('image/icons8-search-64.png') }}" alt="Search">
         </button>
     </form>
 
@@ -22,7 +22,7 @@
             <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
             <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
             <a href="{{ route('course') }}" class="nav-item nav-link">Courses</a>
-            
+
             @if(Auth::check())
             @if (Auth::user()->role === 'user')
                 <!-- User Navigation -->
@@ -61,4 +61,13 @@
 
 @push('js')
 
+<script>
+document.getElementById('search-button').addEventListener('click', function (e) {
+    const queryInput = document.getElementById('query-input');
+    if (!queryInput.value.trim()) {
+        e.preventDefault();
+        alert('Please enter a search term.');
+    }
+});
+</script>
 @endpush
