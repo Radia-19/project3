@@ -21,7 +21,13 @@ return new class extends Migration
             $table->string('studentAddress');
             $table->string('studentDepartment');
             $table->text('studentImage');
+            $table->unsignedInteger('batch')->default(1);
+            $table->unsignedBigInteger( 'approve_by')->nullable();
+            $table->enum( 'status',['pending','approved','declined'])->default('pending');
+            $table->dateTime( 'approve_date')->nullable();
             $table->timestamps();
+
+            $table->foreign( 'approve_by')->on('admins')->references( 'id')->onDelete('cascade');
         });
     }
 

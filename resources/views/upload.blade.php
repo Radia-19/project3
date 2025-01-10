@@ -10,7 +10,6 @@
 @section('content')
    <div class="container">
        <div class="row">
-
            <div class="col-8 offset-2 mt-4">
             @include('errors.error')
              Upload Files :

@@ -31,16 +31,11 @@ class FileController extends Controller
                 'user_id'=> Auth::id(),
                 'name'=> $request->name,
                 'details' => $request->details,
-                'book'=> $bookName
+                'book'=> $request->book,
             ]);
         });
-        return redirect()->back()->with('okMsg','Uploaded Successfully');
+        return to_route('file')->with('okMsg','Uploaded Successfully');
 
-    }
-    public function index(){
-
-        $book = Book::where('user_id',Auth::id())->paginate(5); //ELOQUENT + QUERY BUILDER
-        return view('books',compact('book'));
     }
 
     public function show($id)
@@ -49,22 +44,40 @@ class FileController extends Controller
         return view('updateUpload',compact('book'));
     }
 
-    public function update(Request $request,$id)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'details' => 'nullable|string',
-        ]);
+    public function update(Request $request, $id)
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'details' => 'nullable|string',
+        'book' => 'nullable|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,jpeg,png|max:15360',
+    ]);
 
-        $book = Book::findOrFail($id);
+    $book = Book::findOrFail($id);
+
+    if ($request->hasFile('book')) {
+        // Handle file upload
+        $bookName = uniqid().sha1(rand(100,9000)).'.'.request()->file('book')->extension();
+        \request()->file('book')->move(public_path('uploads/'),$bookName);
+
+        // Delete the old file (optional)
+        // if ($book->book && file_exists(public_path('uploads/' . $book->book))) {
+        //     unlink(public_path('uploads/' . $book->book));
+        // }
 
         $book->update([
             'name' => $request->input('name'),
             'details' => $request->input('details'),
+            'book' => $bookName, // Save new file name
         ]);
-
-        return to_route('books')->with('success', 'book updated successfully');
+    // } else {
+    //     $book->update([
+    //         'name' => $request->input('name'),
+    //         'details' => $request->input('details'),
+    //     ]);
     }
+
+    return to_route('file')->with('success', 'Book updated successfully');
+}
 
 
     public function delete($id)
@@ -74,46 +87,4 @@ class FileController extends Controller
         $book->delete();
         return to_route('home')->with('success', 'book deleted successfully');
     }
-    //  public function approved($bookId)
-    //  {
-    //      $book = Book::findOrFail($bookId);
-
-    //      if($book->user_id == Auth::id()){
-
-    //          $book->update([
-    //                'status' => 'Approved'
-    //          ]);
-    //          return redirect()->back();
-    //      }else{
-    //          return 'Hacker Found!';
-    //      }
-
-    //  }
-    //  public function approveShow()
-    // {
-    //     $pendingbooks = Book::with('user')->where('status','pending')->latest()->paginate(3);
-    //     return view('approval', compact('pendingbooks'));
-    // }
-
-    // public function bookApproveStatusUpdate($bookId, $status)
-    // {
-    //     $book = Book::findOrFail($bookId);
-
-    //     if (in_array($status, ['approved', 'declined'])) {
-    //         $data = [
-    //             'status' => $status,
-    //         ];
-
-    //         if ($status === 'approved') {
-    //             $data['approve_by'] = Auth::guard('admin')->id();
-    //             $data['approve_date'] = now();
-    //         }
-
-    //         $book->update($data);
-
-    //         return redirect()->back()->with('success', 'Book status updated successfully!');
-    //     }
-
-    //     return redirect()->back()->with('error', 'Invalid status provided.');
-    // }
 }

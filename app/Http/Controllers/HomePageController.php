@@ -38,13 +38,19 @@ class HomePageController extends Controller
     }
 
 
-    public function file(Request $request){
+    public function file()
+    {
 
-        $randomBooks = Book::with('user')
-        ->inRandomOrder()
-        ->paginate(10);
+        if (Auth::user()->role === 'trainer' || Auth::user()->role === 'user') {
 
-        return view("file", compact("randomBooks"));
+            $allBooks = Book::paginate(3);
+        }
+
+        // $$books = Book::with('user')
+        // ->inRandomOrder()
+        // ->paginate(10);
+
+        return view("file", compact("allBooks"));
     }
     public function task()
     {

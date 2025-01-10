@@ -297,7 +297,7 @@
                 <div class="p-4">
                     <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
                     <h5 class="mb-3">Task</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <p>Tasks Notices</p>
                 </div>
             </div>
                 </a>
@@ -310,7 +310,7 @@
                 <div class="p-4">
                     <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
                     <h5 class="mb-3">Files</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <p>Class Modules</p>
                 </div>
             </div>
             </a>

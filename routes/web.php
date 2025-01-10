@@ -28,26 +28,18 @@ Route::post('task/edit/{id}',[TaskManagerController::class,'update'])->name('tas
 Route::get('task/edit/{id}/{status}',[TaskManagerController::class,'updateStatus'])->name('task.updateStatus');
 Route::get('task/delete/{id}',[TaskManagerController::class,'delete'])->name('task.delete');
 
-Route::get('/file', [HomePageController::class,'file'])->name('file');
-Route::get('upload',[FileController::class,'create'])->name('upload.show');
-Route::post('upload',[FileController::class,'upload'])->name('upload');
-Route::get('books',[FileController::class,'index'])->name('books.show');
-Route::get('books/edit/{id}',[FileController::class,'show'])->name('updatebooks.show');
-Route::post('books/edit/{id}',[FileController::class,'update'])->name('books.update');
-Route::get('books/delete/{id}',[FileController::class,'delete'])->name('books.delete');
+Route::get('/file', [HomePageController::class, 'file'])->name('file');
+Route::get('upload', [FileController::class, 'create'])->name('upload.show');
+Route::post('upload', [FileController::class, 'upload'])->name('upload');
+Route::get('books/edit/{id}', [FileController::class, 'show'])->name('updatebooks.show');
+Route::post('books/edit/{id}', [FileController::class, 'update'])->name('books.update');  // Changed to PUT
+Route::get('books/delete/{id}', [FileController::class, 'delete'])->name('books.delete');  // Changed to DELETE
+
 // Route::get('books/approved/{bookId}',[FileController::class,'approved'])->name('book.approved');
 // Route::get('approval',[FileController::class,'approveShow'])->name('approval.show');
 // Route::get('approval/updatestatus/{bookId}/{status}',[FileController::class,'bookApproveStatusUpdate'])->name('approval.update');
 // Route::get('myfinancial',[FinancialController::class,'index'])->name('myFinancial.show');
 // Route::get('myfinancial/cashout',[FinancialController::class,'cashout'])->name('myFinancial.cashout');
-
-
-
-//Users
-// Route::get('enroll',[UploadController::class,'enroll'])->name('enroll.show');
-// Route::post('enroll',[UploadController::class,'enroll'])->name('enroll');
-// Route::get('payment',[FinancialController::class,'payment'])->name('payment.show');
-// Route::get('payment/summary',[FinancialController::class,'summary'])->name('payment.summary');
 
 
 
@@ -73,12 +65,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 //Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 Route::prefix('admin')->group(function () {
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('admin.dashboard');
-    // Route::get('approval',[AdminDashboardController::class,'approveShow'])->name('admin.approval.show');
-    // Route::get('approval/updatestatus/{bookId}/{status}',[AdminDashboardController::class,'bookApproveStatusUpdate'])->name('admin.approval.update');
-    // Route::get('buyout',[AdminDashboardController::class,'buyOutShow'])->name('admin.buyout.show');
-    // Route::post('buyout/update',[AdminDashboardController::class,'buyOut'])->name('admin.buyout.update');
-    // Route::get('cashouts',[AdminDashboardController::class,'showCashouts'])->name('admin.cashout.show');
-    // Route::get('cashouts/updat/{cashout_Id}/{status}',[AdminDashboardController::class,'updateCashouts'])->name('admin.cashout.update');
+
 });
 
 
@@ -90,6 +77,10 @@ Route::get('/view/student{id}',[AddStudentController::class,'viewStudent'])->nam
 Route::get('/edit/student{id}',[AddStudentController::class,'editStudent'])->name('editStudent');
 Route::POST('/update/student{id}',[AddStudentController::class,'updateStudent'])->name('updateStudent');
 Route::get('/delete/student{id}',[AddStudentController::class,'deleteStudent'])->name('deleteStudent');
+//Route::get('approval',[AddStudentController::class,'approveShow'])->name('admin.approval.show');
+Route::get('approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
+Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
+
 
 // All Department....
 Route::get('/graph/department',[DepartmentController::class,'graph'])->name('graph');

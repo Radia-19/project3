@@ -14,7 +14,6 @@
             @include('errors.error')
             Files :
              <hr>
-
                 <!-- Section-->
                 <section class="py-2">
                     <div class="container px-4 px-lg-5 mt-5">
