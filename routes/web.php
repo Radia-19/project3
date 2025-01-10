@@ -65,7 +65,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 //Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 Route::prefix('admin')->group(function () {
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('admin.dashboard');
-
 });
 
 
@@ -78,7 +77,7 @@ Route::get('/edit/student{id}',[AddStudentController::class,'editStudent'])->nam
 Route::POST('/update/student{id}',[AddStudentController::class,'updateStudent'])->name('updateStudent');
 Route::get('/delete/student{id}',[AddStudentController::class,'deleteStudent'])->name('deleteStudent');
 //Route::get('approval',[AddStudentController::class,'approveShow'])->name('admin.approval.show');
-Route::get('approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
+Route::get('/admin/approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
 Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
 
 
