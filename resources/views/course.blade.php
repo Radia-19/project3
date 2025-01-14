@@ -132,128 +132,136 @@
                                     </div>
                 <h5 class="m-3">ANIMATION</h5>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Animation and Gaming</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#" style="text-decoration: none">
+                                            <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <img src="{{asset('image/anime1.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                <div class="card-body">
+                                                <h5 class="card-title text-black">Animation and Gaming</h5>
+                                                <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="">Animation and VFX</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#" style="text-decoration: none">
+                                            <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <img src="{{asset('image/anime2.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                <div class="card-body">
+                                                <h5 class="card-title text-black">Animation and VFX</h5>
+                                                <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">2D Animation</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#" style="text-decoration: none">
+                                            <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                <div class="card-body">
+                                                <h5 class="card-title text-black">3D Animation</h5>
+                                                <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                <h5 class="m-3">BASIC COURSES</h5>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                        <a href="#" style="text-decoration: none">
+                                            <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                <div class="card-body">
+                                                <h5 class="card-title text-black">English</h5>
+                                                <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="">3D Animation</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-                <h5>BASIC COURSES</h5>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">English</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#" style="text-decoration: none">
+                                            <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                <div class="card-body">
+                                                <h5 class="card-title text-black">Basic Computer</h5>
+                                                <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Basic Computer</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#" style="text-decoration: none">
+                                            <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                <div class="card-body">
+                                                <h5 class="card-title text-black">Leadership and Management</h5>
+                                                <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Programming language</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Leadership and Management</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                <h5>CYBER SECURITY</h5>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Network security</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Application security</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Information security</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Cloud Security</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5>ANDROID APP DEVELOPMENT</h5>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">App Development Basics</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Kotlin Programming Fundamentals</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#"> UI/UX design</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                                        <ul class="depName">
-                                            <li class="dropdown">
-                                                <a href="#">Meta's Android</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
+                <h5 class="m-3">CYBER SECURITY</h5>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                                <a href="#" style="text-decoration: none">
+                                                    <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                        <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                        <div class="card-body">
+                                                        <h5 class="card-title text-black">Network security</h5>
+                                                        <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                        <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                                <a href="#" style="text-decoration: none">
+                                                    <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                        <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                        <div class="card-body">
+                                                        <h5 class="card-title text-black">Information security</h5>
+                                                        <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                        <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                                <a href="#" style="text-decoration: none">
+                                                    <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                        <img src="{{asset('image/anime3.jpg')}}" class="card-img-top rounded-top-3" alt="graph1.jpg">
+                                                        <div class="card-body">
+                                                        <h5 class="card-title text-black">Cloud Security</h5>
+                                                        <p class="card-text text-black mb-2">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</p>
+                                                        <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
                             </div>
                       </div>
                  </div>
     </div>
+    <nav aria-label="Page navigation example" class="m-4">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+          </li>
+        </ul>
+      </nav>
 
 </section>
 
