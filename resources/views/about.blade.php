@@ -43,32 +43,32 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                        <h1 class="mb-4">লার্নিং ম্যানেজমেন্ট সিস্টেমে স্বাগতম</h1>
+                        <h6 class="section-title bg-white text-start text-primary pe-3">আমাদের সম্পর্কে বিস্তারিত</h6>
+                        <h1 class="mb-4">লার্নিং ম্যানেজমেন্ট সিস্টেমের অগ্রযাত্রা</h1>
                         <p class="mb-4">
                             আমাদের প্রতিষ্ঠানে, আমরা এমন শিক্ষা প্রদানের মাধ্যমে মনকে ক্ষমতায়ন এবং ভবিষ্যৎ গঠনে বিশ্বাস করি যা বৃদ্ধিকে অনুপ্রাণিত করে এবং উদ্ভাবনকে উৎসাহিত করে।</p>
                         <p class="mb-4">
                             আমরা শিক্ষার্থীদের জ্ঞান এবং সাফল্যের পথ প্রদান করতে প্রতিশ্রুতিবদ্ধ, যেখানে উচ্চাকাঙ্ক্ষা অর্জনে পরিণত হয়।</p>
-                        <div class="row gy-2 gx-4 mb-4">
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                            <div class="row gy-2 gx-4 mb-4">
+                                <div class="col-sm-6">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Professional Certificate</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Lifetime Access</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Ensure Job Marketplace</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Easy Learning</p>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
-                            </div>
-                        </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="">বিস্তারিত</a>
                     </div>
                 </div>

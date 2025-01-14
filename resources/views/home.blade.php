@@ -243,7 +243,7 @@
     <div class="container">
         <div class="text-center">
             <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-            <h1 class="mb-5">Our Students Say!</h1>
+            <h1 class="mb-5"> শিক্ষার্থীরা যা বলছেন!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
             <div class="testimonial-item text-center">
@@ -251,7 +251,7 @@
                 <h5 class="mb-0">Samina Sanu</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                <p class="mb-0">This is the best learning institute for me. I achieve my goals with the help of brilliant trainers.</p>
+                <p class="mb-0">" This is the best learning institute for me. I achieve my goals with the help of brilliant trainers. "</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -259,7 +259,7 @@
                 <h5 class="mb-0">Babu Basar</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                <p class="mb-0">How inspiring the platform is! Love they're strategis. </p>
+                <p class="mb-0">" How inspiring the platform is! Love theyre' strategis. Classes are always on time and unique projects. "</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -267,7 +267,7 @@
                 <h5 class="mb-0">Zabin Roy</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                <p class="mb-0">I really appreciate how they give effort the weaknesses specially and help to fix the errors. </p>
+                <p class="mb-0">" I really appreciate how they give effort in the weaknesses specially and help to fix the errors. "</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -275,7 +275,7 @@
                 <h5 class="mb-0">Turhan Khan</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                <p class="mb-0">This website helps very well and there trainers, student groups are awesome. </p>
+                <p class="mb-0">" This website helps with very well learing mogule and expert trainers, student groups are awesome. "</p>
                 </div>
             </div>
         </div>
