@@ -43,7 +43,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>প্রফেশনাল সার্টিফিকেট</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">এখনই ভর্তি হোন</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('payment') }}">এখনই ভর্তি হোন</a>
                 </div>
                 <div>
                     <h6 class="section-title bg-white text-start text-primary pe-3">ওয়েব ডিজাইন কি? কিভাবে শিখবেন এবং কত দিন সময় লাগবে?</h6>
