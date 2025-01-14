@@ -19,14 +19,14 @@
                         <div class="row">
                     <h5 class="m-3">WEB DESIGN &amp; DEVELOPMENT</h5>
                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 ">
-                                            <a href="#" style="text-decoration: none">
+                                            <a href="{{ route('details') }}" style="text-decoration: none">
                                                 <div class="card" style="width: 18rem; border-radius: 15px;">
                                                     <img src="{{asset('image/web1.jpg')}}" class="card-img-top rounded-top-3" alt="web1.jpg">
                                                     <div class="card-body">
                                                       <h5 class="card-title text-black">Basic Web Design</h5>
                                                       <p class="card-text text-black mb-2">ফ্রন্টএন্ড ওয়েব ডেভেলপমেন্ট
                                                         সঙ্গে জব প্লেসমেন্ট সাপোর্ট</p>
-                                                      <a href="#"><p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p></a>
+                                                      <p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p>
                                                     </div>
                                                 </div>
                                             </a>

@@ -16,11 +16,11 @@
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+                        <h1 class="display-3 text-white animated slideInDown mb-2">লার্নিং ম্যানেজমেন্ট সিস্টেমের জগতে আপনাকে স্বাগতম।</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="#">Courses</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                                <li class="breadcrumb-item"><a class="text-white" href="{{ route('course') }}">Courses</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page"><a class="text-white" href="{{ route('course') }}">Contact</a></li>
                             </ol>
                         </nav>
                         <p class="text-white">Education with Purpose, Excellence with Passion</p>
@@ -44,9 +44,11 @@
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                         <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                        <h1 class="mb-4">Welcome to Learning Management System</h1>
-                        <p class="mb-4">At our institution, we believe in empowering minds and shaping futures by offering an education that inspires growth and fosters innovation.</p>
-                        <p class="mb-4">We are committed to providing students with a pathway to knowledge and success, where ambition turns into achievement.</p>
+                        <h1 class="mb-4">লার্নিং ম্যানেজমেন্ট সিস্টেমে স্বাগতম</h1>
+                        <p class="mb-4">
+                            আমাদের প্রতিষ্ঠানে, আমরা এমন শিক্ষা প্রদানের মাধ্যমে মনকে ক্ষমতায়ন এবং ভবিষ্যৎ গঠনে বিশ্বাস করি যা বৃদ্ধিকে অনুপ্রাণিত করে এবং উদ্ভাবনকে উৎসাহিত করে।</p>
+                        <p class="mb-4">
+                            আমরা শিক্ষার্থীদের জ্ঞান এবং সাফল্যের পথ প্রদান করতে প্রতিশ্রুতিবদ্ধ, যেখানে উচ্চাকাঙ্ক্ষা অর্জনে পরিণত হয়।</p>
                         <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">
                                 <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
@@ -67,7 +69,7 @@
                                 <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                             </div>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="">বিস্তারিত</a>
                     </div>
                 </div>
             </div>

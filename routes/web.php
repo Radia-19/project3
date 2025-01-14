@@ -16,8 +16,10 @@ use App\Http\Controllers\SocialiteController;
 Route::get('/', [HomePageController::class,'index'])->name('home');
 Route::get('/about', [HomePageController::class,'about'])->name('about');
 Route::get('/course', [HomePageController::class,'course'])->name('course');
+Route::get('/details', [HomePageController::class,'details'])->name('details');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
 Route::get('/search', [HomePageController::class,'search'])->name('search');
+
 
 //Trainers
 Route::get('/task', [HomePageController::class,'task'])->name('task');
