@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Course Details')
+@section('title','Payment Info')
 
 @push('css')
 
@@ -9,7 +9,7 @@
 @section('content')
 
 <section>
-    
+
 </section>
 
 

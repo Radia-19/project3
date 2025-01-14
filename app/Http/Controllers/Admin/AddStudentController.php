@@ -38,12 +38,15 @@ class AddStudentController extends Controller
         if ($studentsInCurrentBatch >= 10) {
             // Move to the next batch and mark the student as pending
             $data['batch'] = $currentBatch + 1;
-            $data['status'] = 'pending';
+            $data['status'] = 'approved';
+            $message = 'The student has been added to the current batch and approved.';
         } else {
             // Add the student to the current batch and approve them
             $data['batch'] = $currentBatch;
-            $data['status'] = 'approved';
+            $data['status'] = 'pending';
+            $message = 'The batch is full. The student has been moved to the next batch and marked as pending.';
         }
+
 
         // Handle student image
         if ($request->hasFile('studentImage')) {
@@ -56,7 +59,7 @@ class AddStudentController extends Controller
 
         Student::create($data);
 
-        return redirect()->back()->with('message', 'Student successfully added!');
+        return redirect()->back()->with('message', $message);
     }
 
     public function allStudents()

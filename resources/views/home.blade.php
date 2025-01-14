@@ -12,6 +12,7 @@
 
 @section('content')
 
+
 <!-- Service Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -99,6 +100,38 @@
 </div>
 <!-- About End -->
 
+<!-- Task Start -->
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            @if(Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'trainer'))
+                <a href="{{ route('task') }}">
+            <div class="service-item text-center pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                    <h5 class="mb-3">Task</h5>
+                    <p>Class Notices</p>
+                </div>
+            </div>
+                </a>
+                @endif
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            @if(Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'trainer'))
+               <a href="{{ route('file') }}">
+            <div class="service-item text-center pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                    <h5 class="mb-3">Files</h5>
+                    <p>Class Modules</p>
+                </div>
+            </div>
+            </a>
+             @endif
+        </div>
+    </div>
+</div>
+<!-- Task End-->
 
 <!-- Categories Start -->
 <div class="container-xxl py-5 category">
@@ -121,7 +154,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                         <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid" src="image/image-600x400 (1).jpg" alt="">
+                            <img class="img-fluid" src="image/image-600x400(1).jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                 <h5 class="m-0">গ্রাফিক্স ডিজাইন</h5>
                                 <small class="text-primary">৫টি কোর্স</small>
@@ -283,38 +316,7 @@
 </div>
 <!-- Testimonial End -->
 
-<!-- Task Start -->
-<div class="container">
-    <div class="row g-5">
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            @if(Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'trainer'))
-                <a href="{{ route('task') }}">
-            <div class="service-item text-center pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                    <h5 class="mb-3">Task</h5>
-                    <p>Tasks Notices</p>
-                </div>
-            </div>
-                </a>
-                @endif
-        </div>
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            @if(Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'trainer'))
-               <a href="{{ route('file') }}">
-            <div class="service-item text-center pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                    <h5 class="mb-3">Files</h5>
-                    <p>Class Modules</p>
-                </div>
-            </div>
-            </a>
-             @endif
-        </div>
-    </div>
-</div>
-<!-- Task End-->
+
 
 @endsection
 

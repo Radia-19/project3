@@ -6,6 +6,12 @@ Add Student
 
 @section('content')
 <div class="container m-5">
+    @if(session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
+
     <h2 class="page-title">Enroll New Student</h2>
     <div class="row mb-2">
       <div class="col-lg-12">
