@@ -23,6 +23,9 @@ class HomePageController extends Controller
     public function details(){
         return view("details");
     }
+    public function payment(){
+        return view("payment");
+    }
     public function contact(){
         return view("contact");
     }

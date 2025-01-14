@@ -14,7 +14,8 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="image/image-700x700.jpg" alt="" style="object-fit: cover;">
+                        {{-- <img class="img-fluid position-absolute w-100 h-100" src="image/image-700x700.jpg" alt="" style="object-fit: cover;"> --}}
+                        <video src="{{ asset('video/basic.mp4') }}" width="600" height="380" style="object-fit: cover;" autoplay muted loop controls></video>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
