@@ -37,6 +37,7 @@
                 </a>
             @elseif (Auth::user()->role === 'trainer')
                 <!-- Trainer Navigation -->
+                <a href="{{ route('course.create.show') }}" class="nav-item nav-link">Create</a>
                 <a href="{{ route('task.create.show') }}" class="nav-item nav-link">Task</a>
                 <a href="{{ route('upload.show') }}" class="nav-item nav-link">Upload</a>
                 {{-- <div class="nav-item dropdown">

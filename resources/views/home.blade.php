@@ -186,7 +186,7 @@
 </div>
 <!-- Categories Start -->
 
-<!-- Team Start -->
+<!-- Trainer Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -197,9 +197,9 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item bg-light">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="image/image-500x500 (1).jpg" alt="">
+                        <img class="img-fluid" src="image/image-500x500 (1).jpg" alt="" style="padding: 30px">
                     </div>
-                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -55px;">
                         <div class="bg-light d-flex justify-content-center pt-2 px-1">
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -215,9 +215,9 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="image/image-500x500.jpg" alt="">
+                        <img class="img-fluid" src="image/image-500x500.jpg" alt="" style="padding: 30px">
                     </div>
-                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -55px;">
                         <div class="bg-light d-flex justify-content-center pt-2 px-1">
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -233,9 +233,9 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="image/image-500x500 (1).jpg" alt="">
+                        <img class="img-fluid" src="image/image-500x500 (1).jpg" alt="" style="padding: 30px">
                     </div>
-                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -55px;">
                         <div class="bg-light d-flex justify-content-center pt-2 px-1">
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -251,9 +251,9 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item bg-light">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="image/image-500x500.jpg" alt="">
+                        <img class="img-fluid" src="image/image-500x500.jpg" alt="" style="padding: 30px">
                     </div>
-                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -55px;">
                         <div class="bg-light d-flex justify-content-center pt-2 px-1">
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -269,7 +269,7 @@
         </div>
     </div>
 </div>
-<!-- Team End -->
+<!-- Trainer End -->
 
 <!-- Testimonial Start -->
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -316,11 +316,25 @@
 </div>
 <!-- Testimonial End -->
 
+{{-- <button onclick="showPopup()">Click Me</button> --}}
 
 
 @endsection
 
-@push('css')
+@push('js')
+
+
+
+<script>
+    function showPopup() {
+        Swal.fire({
+            title: 'Hello!',
+            text: 'This is a popup message.',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        });
+    }
+</script>
 
 @endpush
 

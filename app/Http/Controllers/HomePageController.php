@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Book;
 use App\Models\Task;
+use App\Models\Course;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,12 +18,7 @@ class HomePageController extends Controller
     public function about(){
         return view("about");
     }
-    public function course(){
-        return view("course");
-    }
-    public function details(){
-        return view("details");
-    }
+
     public function payment(){
         return view("payment");
     }
@@ -42,7 +38,6 @@ class HomePageController extends Controller
 
         return view('search-results', compact('articles'));
     }
-
 
     public function file()
     {
@@ -70,5 +65,14 @@ class HomePageController extends Controller
         }
 
         return view('task', compact('allTasks'));
+    }
+
+    public function course(){
+
+        if (Auth::user()->role === 'trainer'){
+            $allCourses = Course::paginate(20);
+        }
+
+        return view("course", compact('allCourses'));
     }
 }

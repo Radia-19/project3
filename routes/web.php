@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\TaskManagerController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
@@ -15,12 +16,14 @@ use App\Http\Controllers\SocialiteController;
 // Home Page
 Route::get('/', [HomePageController::class,'index'])->name('home');
 Route::get('/about', [HomePageController::class,'about'])->name('about');
-Route::get('/course', [HomePageController::class,'course'])->name('course');
-Route::get('/details', [HomePageController::class,'details'])->name('details');
 Route::get('/payment', [HomePageController::class,'payment'])->name('payment');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
 Route::get('/search', [HomePageController::class,'search'])->name('search');
 
+Route::get('/course', [HomePageController::class,'course'])->name('course');
+Route::get('course/create',[CourseController::class,'create'])->name('course.create.show');
+Route::post('course/create',[CourseController::class,'store'])->name('course.create');
+Route::get('/details', [CourseController::class,'details'])->name('details');
 
 //Trainers
 Route::get('/task', [HomePageController::class,'task'])->name('task');
