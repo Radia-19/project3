@@ -24,17 +24,31 @@ class CourseController extends Controller
         ]);
         $validator->validate();
 
-        DB::transaction(function () use($request) {
+        $imagePath = null;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = hexdec(uniqid()) . '.' . strtolower($image->getClientOriginalExtension());
+            $imagePath = 'upload/' . $imageName;
+            $image->move(public_path('upload/'), $imageName);
+        }
+
+        DB::transaction(function () use($request, $imagePath) {
            Course::create([
+              'user_id' => Auth::id(),
               'name' => $request->input('name'),
               'details' => $request->input('details'),
-              'user_id' => Auth::id(), // Add user_id here
+              'image' => $imagePath,
            ]);
         });
         return to_route('course')->with('success', 'Course added successfully');
 
     }
 
+    // $imageName = uniqid().sha1(rand(100,9000)).'.'.request()->file('image')->extension();
+        // //\request()->file('image')->move(public_path('uploads/'),$imageName);
+        // $filePath = 'uploads/' . $imageName; // Save relative path
+        // $request->file('image')->move(public_path('uploads/'), $imageName);
     public function details(){
         return view("details");
     }

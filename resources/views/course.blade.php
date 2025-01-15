@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Home')
+@section('title','Course')
 
 @push('css')
 
@@ -22,10 +22,10 @@
                         <div class="row">
                             @foreach($allCourses as $course)
                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 ">
-
                                                 <div class="card" style="width: 18rem; border-radius: 15px;">
                                                     <a href="{{ route('details') }}" style="text-decoration: none">
-                                                    <img src="{{ asset('uploads').'/'.$image }}" class="card-img-top rounded-top-3" alt="web1.jpg">
+                                                        <img src="{{ asset($course->image) }}" class="card-img-top rounded-top-3" alt="{{ $course->name }}">
+
                                                     <div class="card-body">
                                                       <h5 class="card-title text-black">{{ $course->name }}</h5>
                                                       <p class="card-text text-black mb-2">{{ $course->details }}</p>
@@ -33,32 +33,14 @@
                                                     </div>
                                                     </a>
                                                 </div>
-
                                     </div>
-                                    @endforeach
+                            @endforeach
                                     {{ $allCourses->links() }}
 
                             </div>
                       </div>
                  </div>
     </div>
-    <nav aria-label="Page navigation example" class="m-4">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-          </li>
-        </ul>
-      </nav>
 
 </section>
 
