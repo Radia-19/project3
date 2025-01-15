@@ -16,7 +16,6 @@ use App\Http\Controllers\SocialiteController;
 // Home Page
 Route::get('/', [HomePageController::class,'index'])->name('home');
 Route::get('/about', [HomePageController::class,'about'])->name('about');
-Route::get('/payment', [HomePageController::class,'payment'])->name('payment');
 Route::get('/contact', [HomePageController::class,'contact'])->name('contact');
 Route::get('/search', [HomePageController::class,'search'])->name('search');
 
@@ -70,6 +69,8 @@ Route::prefix('admin')->group(function () {
 // Add Student....
 Route::get('/add/student',[AddStudentController::class,'addStudent'])->name('addStudent');
 Route::POST('/store/student',[AddStudentController::class,'storeStudent'])->name('storeStudent');
+Route::get('/admin/payment',[AddStudentController::class,'paymentShow'])->name('admin.payment.show');
+Route::post('/payment',[AddStudentController::class, 'payment'])->name('payment');
 Route::get('/all/student',[AddStudentController::class,'allStudents'])->name('allStudents');
 Route::get('/view/student{id}',[AddStudentController::class,'viewStudent'])->name('viewStudent');
 Route::get('/edit/student{id}',[AddStudentController::class,'editStudent'])->name('editStudent');

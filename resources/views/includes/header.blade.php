@@ -31,7 +31,6 @@
             @if (Auth::user()->role === 'user')
                 <!-- User Navigation -->
                 <a href="{{ route('addStudent') }}" class="nav-item nav-link">Enrollment</a>
-                {{-- <a href="{{ route('payment.show') }}" class="nav-item nav-link">Payment</a> --}}
                 <a href="{{ route('logout') }}" class="nav-item nav-link pe-3 me-5">
                     ({{ Auth::user()->username }}) Logout
                 </a>

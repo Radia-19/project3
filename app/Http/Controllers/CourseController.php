@@ -45,11 +45,8 @@ class CourseController extends Controller
 
     }
 
-    // $imageName = uniqid().sha1(rand(100,9000)).'.'.request()->file('image')->extension();
-        // //\request()->file('image')->move(public_path('uploads/'),$imageName);
-        // $filePath = 'uploads/' . $imageName; // Save relative path
-        // $request->file('image')->move(public_path('uploads/'), $imageName);
     public function details(){
         return view("details");
     }
 }
+

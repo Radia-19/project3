@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Student;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -39,12 +40,12 @@ class AddStudentController extends Controller
             // Move to the next batch and mark the student as pending
             $data['batch'] = $currentBatch + 1;
             $data['status'] = 'approved';
-            $message = 'The student has been added to the current batch and approved.';
+            $message = 'You have been added to the current batch and approved.';
         } else {
             // Add the student to the current batch and approve them
             $data['batch'] = $currentBatch;
             $data['status'] = 'pending';
-            $message = 'The batch is full. The student has been moved to the next batch and marked as pending.';
+            $message = 'The batch is full. You have been moved to the next batch and marked as pending.';
         }
 
 
@@ -60,6 +61,31 @@ class AddStudentController extends Controller
         Student::create($data);
 
         return redirect()->back()->with('message', $message);
+    }
+
+    public function paymentShow()
+    {
+        return view('admin.payment');
+
+    }
+
+    public function payment(Request $request)
+    {
+        $validatedData = $request->validate([
+        'payment_method' => 'required|string|in:card,bank,cash,paypal',
+        'amount' => 'required|numeric|min:0',
+        ]);
+
+        $data = $validatedData;
+
+        Payment::create([
+            'studentName' => $data['studentName'],
+            'payment_method' => $data['payment_method'],
+            'amount' => $data['amount'],
+            'status' => 'completed', // Assuming payment is successful
+            'paid_at' => now(),
+        ]);
+        return redirect()->route('allStudents')->with('success', 'Student added with payment successfully.');
     }
 
     public function allStudents()

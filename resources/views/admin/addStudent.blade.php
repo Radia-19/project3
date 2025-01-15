@@ -84,6 +84,19 @@ Add Student
                 @enderror
                 <input type="file" class="form-control" name="studentImage" placeholder=" Image "/>
               </div>
+              <div class="form-group mt-2">
+                <label for="payment_method">Payment Method</label>
+                <select name="payment_method" id="payment_method" class="form-control" required>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="cash">Cash</option>
+                    <option value="paypal">Bkash/Nagad/Rocket</option>
+                </select>
+            </div>
+            <div class="form-group mt-2">
+                <label for="amount">Amount Paid</label>
+                <input type="number" name="amount" id="amount" class="form-control" required>
+            </div>
               <div class="text-center">
                <input type="submit" class=" btn btn-primary enter-btn m-3" value="Save" name="studentSubmit"/>
             </div>
