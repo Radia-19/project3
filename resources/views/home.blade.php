@@ -18,6 +18,7 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+
                 <div class="service-item text-center pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
@@ -25,6 +26,7 @@
                         <p>Our instructors are skilled experts who share their knowledge through engaging courses</p>
                     </div>
                 </div>
+
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item text-center pt-3">
@@ -45,13 +47,15 @@
                     </div>
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <a href="{{ asset('course') }}">
                 <div class="service-item text-center pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
                         <h5 class="mb-3">কোর্সসমূহ</h5>
-                        <p>Our courses expand opportunities and empower students with essential learning tools</p>
+                        <p class="text-secondary">Our courses expand opportunities and empower students with essential learning tools</p>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
@@ -144,7 +148,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="row g-3">
                     <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
+                        <a class="position-relative d-block overflow-hidden" href="{{ asset('course') }}">
                             <img class="img-fluid" src="image/image-800x300.jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                 <h5 class="m-0">ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট</h5>
@@ -153,7 +157,7 @@
                         </a>
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
+                        <a class="position-relative d-block overflow-hidden" href="{{ asset('course') }}">
                             <img class="img-fluid" src="image/image-600x400(1).jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                 <h5 class="m-0">গ্রাফিক্স ডিজাইন</h5>
@@ -162,7 +166,7 @@
                         </a>
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                        <a class="position-relative d-block overflow-hidden" href="">
+                        <a class="position-relative d-block overflow-hidden" href="{{ asset('course') }}">
                             <img class="img-fluid" src="image/image-600x400.jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                 <h5 class="m-0">ডিজিটাল মার্কেটিং</h5>
@@ -173,7 +177,7 @@
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                <a class="position-relative d-block h-100 overflow-hidden" href="">
+                <a class="position-relative d-block h-100 overflow-hidden" href="{{ asset('course') }}">
                     <img class="img-fluid position-absolute w-100 h-100" src="img/cat-4.jpg" alt="" style="object-fit: cover;">
                     <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
                         <h5 class="m-0">সাইবার সিকিউরিটি</h5>

@@ -20,7 +20,7 @@ class CourseController extends Controller
         $validator = Validator::make($request->all(), [
            'name' => 'required|min:5',
            'details'=> 'required',
-           'image'=> 'required|image|mimes:jpg,jpeg,png|max:2048'
+           'image'=> 'required|image|mimes:jpg,jpeg,png|max:5120'
         ]);
         $validator->validate();
 

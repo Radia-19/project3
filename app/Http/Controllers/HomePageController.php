@@ -69,9 +69,10 @@ class HomePageController extends Controller
 
     public function course(){
 
-        if (Auth::user()->role === 'trainer'){
+        //if (Auth::user()->role === 'trainer' || Auth::user()->role === 'user'){
+
             $allCourses = Course::paginate(20);
-        }
+        //}
 
         return view("course", compact('allCourses'));
     }

@@ -29,7 +29,7 @@
                              <option class="fw-bold" value="trainer">Trainer</option>
                     </select>
                     <div class="remember-forgot">
-                    <label><input type="checkbox" class="check me-2">Remember me</label>
+                    <label><input type="checkbox" name="remember" id="remember" class="check me-2">Remember me</label>
                     </div>
 
                    <div class="text-center">

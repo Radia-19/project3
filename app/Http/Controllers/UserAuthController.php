@@ -30,10 +30,13 @@ class UserAuthController extends Controller
             'role' => 'required|in:trainer,user',
         ]);
 
+        $remember = $request->has('remember');
+
         if (Auth::attempt([
            'username' => $request->username,
-            'password' => $request->password
-        ])) {
+            'password' => $request->password,
+
+        ],$remember)) {
             $user = Auth::user();
 
             // Check if the role matches
