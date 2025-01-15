@@ -14,4 +14,10 @@ class Student extends Model
     {
         return $this->belongsTo(Admin::class);
     }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class); // Assuming one student has one payment
+    }
+
 }

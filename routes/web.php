@@ -51,9 +51,9 @@ Route::get('google-login/google',[SocialiteController::class,'redirectTogoogle']
 Route::get('google-login/google/callback',[SocialiteController::class,'handleGoogleCallback'])->name('googleCallback');
 
 // Admin Authentication
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+//Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 //Route::middleware(['admin'])->group(function() {
-//Route::prefix('admin')->group(function () {
+Route::prefix('admin')->group(function () {
     Route::get('login', [AdminAuthController::class,'showLogin'])->name('admin.login.show');
     Route::post('login', [AdminAuthController::class,'login'])->name('admin.login');
     Route::get('logout', [AdminAuthController::class,'logout'])->name('admin.logout');
@@ -76,7 +76,7 @@ Route::get('/view/student{id}',[AddStudentController::class,'viewStudent'])->nam
 Route::get('/edit/student{id}',[AddStudentController::class,'editStudent'])->name('editStudent');
 Route::POST('/update/student{id}',[AddStudentController::class,'updateStudent'])->name('updateStudent');
 Route::get('/delete/student{id}',[AddStudentController::class,'deleteStudent'])->name('deleteStudent');
-//Route::get('approval',[AddStudentController::class,'approveShow'])->name('admin.approval.show');
+Route::get('/admin/approved',[AddStudentController::class,'approvedShow'])->name('admin.approved.show');
 Route::get('/admin/approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
 Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
 

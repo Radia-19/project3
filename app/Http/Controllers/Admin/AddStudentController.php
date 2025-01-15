@@ -63,30 +63,42 @@ class AddStudentController extends Controller
         return redirect()->back()->with('message', $message);
     }
 
-    public function paymentShow()
+    public function approveShow()
     {
-        return view('admin.payment');
+        // Fetch all pending students for approval
+        $students = Student::where('status', 'pending')->get();
 
+        return view('admin.approvedShow', compact('students'));
     }
+
+
+    public function paymentShow($studentId)
+    {
+        $student = Student::with('payment')->findOrFail($studentId);
+
+        return view('admin.payment', compact('student'));
+    }
+
 
     public function payment(Request $request)
     {
         $validatedData = $request->validate([
-        'payment_method' => 'required|string|in:card,bank,cash,paypal',
-        'amount' => 'required|numeric|min:0',
+            'payment_method' => 'required|string|in:card,bank,cash,paypal',
+            'amount' => 'required|numeric|min:0',
+            'student_id' => 'required|exists:students,id', // Validate that student exists
         ]);
 
-        $data = $validatedData;
-
         Payment::create([
-            'studentName' => $data['studentName'],
-            'payment_method' => $data['payment_method'],
-            'amount' => $data['amount'],
+            'student_id' => $validatedData['student_id'], // Link to student ID
+            'payment_method' => $validatedData['payment_method'],
+            'amount' => $validatedData['amount'],
             'status' => 'completed', // Assuming payment is successful
             'paid_at' => now(),
         ]);
-        return redirect()->route('allStudents')->with('success', 'Student added with payment successfully.');
+
+        return redirect()->route('allStudents')->with('success', 'Payment processed successfully.');
     }
+
 
     public function allStudents()
     {

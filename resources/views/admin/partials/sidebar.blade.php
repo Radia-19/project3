@@ -40,7 +40,7 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">All Enrollments</h6>
-                {{-- <a class="collapse-item" href="{{ route('admin.approval.show') }}"><i class="bi bi-door-open-fill"></i> Approval</a> --}}
+                <a class="collapse-item" href="{{ route('admin.approved.show') }}"><i class="bi bi-door-open-fill"></i> Approved</a>
                 <a class="collapse-item" href="{{ route('admin.payment.show') }}"><i class="bi bi-bag-heart-fill"></i> Payment</a>
                 {{-- <a class="collapse-item" href="{{ route('admin.buyout.show') }}"><i class="bi bi-bag-heart-fill"></i> Buyout</a>
                 <a class="collapse-item" href="{{ route('admin.cashout.show') }}"><i class="bi bi-cash-coin"></i> Cashout</a> --}}
