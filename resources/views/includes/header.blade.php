@@ -38,7 +38,7 @@
                 <!-- Trainer Navigation -->
                 <a href="{{ route('course.create.show') }}" class="nav-item nav-link">Create</a>
                 <a href="{{ route('task.create.show') }}" class="nav-item nav-link">Task</a>
-                <a href="{{ route('upload.show') }}" class="nav-item nav-link">Upload</a>
+                <a href="{{ route('upload.create.show') }}" class="nav-item nav-link">File</a>
                 {{-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Files</a>
                     <div class="dropdown-menu fade-down m-0">

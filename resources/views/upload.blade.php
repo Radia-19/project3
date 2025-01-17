@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Files')
+@section('title','Files Upload')
 
 @push('css')
 
@@ -14,7 +14,7 @@
             @include('errors.error')
              Upload Files :
              <hr>
-             <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+             <form action="{{ route('upload.create') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <label class="form-label mt-3">File Title:</label>
                 <input class="form-control" type="text" name="name">

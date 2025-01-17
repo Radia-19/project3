@@ -27,9 +27,8 @@ class HomePageController extends Controller
     }
     public function search(Request $request)
     {
-        $query = $request->input('query'); // Get the search query
+        $query = $request->input('query');
 
-        // If query is provided, filter articles, otherwise return all
         if ($query) {
             $articles = Article::where('content', 'like', '%' . $query . '%')->get();
         } else {
@@ -71,7 +70,7 @@ class HomePageController extends Controller
 
         //if (Auth::user()->role === 'trainer' || Auth::user()->role === 'user'){
 
-            $allCourses = Course::paginate(20);
+            $allCourses = Course::paginate(16);
         //}
 
         return view("course", compact('allCourses'));

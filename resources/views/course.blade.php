@@ -10,7 +10,7 @@
 
 <section class="department">
 	<div class="text-center mt-5 mb-3">
-        <h6 class="section-title bg-white text-start text-primary pe-3">Course Details</h6>
+        <h6 class="section-title bg-white text-start text-primary pe-3 mb-2">কোর্স ডিটেইলস</h6>
                         <h4 class="mb-4">আপনার পছন্দের কোর্সটি বেছে নিন আর দক্ষতা অর্জন করে হয়ে উঠুন স্বাবলম্বী।</h4>
     </div>
 	<div class="container">
@@ -20,9 +20,10 @@
                             <p class="alert alert-success">{{ session('success') }}</p>
                         @endif
                         <div class="row">
+                            {{ $allCourses->links() }}
                             @foreach($allCourses as $course)
                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 ">
-                                                <div class="card" style="width: 18rem; border-radius: 15px;">
+                                                <div class="card m-2" style="width: 18rem; border-radius: 15px;">
                                                     <a href="{{ route('details') }}" style="text-decoration: none">
                                                         <img src="{{ asset($course->image) }}" class="card-img-top rounded-top-3" alt="{{ $course->name }}">
 
@@ -35,7 +36,7 @@
                                                 </div>
                                     </div>
                             @endforeach
-                                    {{ $allCourses->links() }}
+
 
                             </div>
                       </div>

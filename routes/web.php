@@ -34,8 +34,8 @@ Route::get('task/edit/{id}/{status}',[TaskManagerController::class,'updateStatus
 Route::get('task/delete/{id}',[TaskManagerController::class,'delete'])->name('task.delete');
 
 Route::get('/file', [HomePageController::class, 'file'])->name('file');
-Route::get('upload', [FileController::class, 'create'])->name('upload.show');
-Route::post('upload', [FileController::class, 'upload'])->name('upload');
+Route::get('upload/create', [FileController::class, 'create'])->name('upload.create.show');
+Route::post('upload/create', [FileController::class, 'store'])->name('upload.create');
 Route::get('books/edit/{id}', [FileController::class, 'show'])->name('updatebooks.show');
 Route::post('books/edit/{id}', [FileController::class, 'update'])->name('books.update');
 Route::get('books/delete/{id}', [FileController::class, 'delete'])->name('books.delete');

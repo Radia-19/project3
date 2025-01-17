@@ -15,7 +15,7 @@ class FileController extends Controller
     {
         return view('upload');
     }
-    public function upload(Request $request )
+    public function store(Request $request )
     {
         $validated = $request->validate([
             'name'=> 'required|unique:books,name',
@@ -34,7 +34,7 @@ class FileController extends Controller
                 'book'=> $request->book,
             ]);
         });
-        return to_route('file')->with('okMsg','Uploaded Successfully');
+        return to_route('file')->with('okMsg','File Uploaded Successfully');
 
     }
 
