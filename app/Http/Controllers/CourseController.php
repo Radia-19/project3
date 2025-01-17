@@ -27,6 +27,7 @@ class CourseController extends Controller
            'live_class_time' => 'nullable|string',
            'live_classes' => 'nullable|integer',
            'projects' => 'nullable|integer',
+           'fee' => 'required|numeric',
         ]);
         $validator->validate();
 
@@ -59,6 +60,7 @@ class CourseController extends Controller
              'live_class_time' => $request->input('live_class_time'),
              'live_classes' => $request->input('live_classes'),
              'projects' => $request->input('projects'),
+             'fee' => $request->input('fee'),
            ]);
         });
         return to_route('course')->with('success', 'Course added successfully');

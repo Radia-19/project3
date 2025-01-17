@@ -28,8 +28,10 @@
                                                         <img src="{{ asset($course->image) }}" class="card-img-top rounded-top-3" alt="{{ $course->name }}">
                                                     <div class="card-body">
                                                       <h5 class="card-title text-black">{{ $course->name }}</h5>
-                                                      <p class="card-text text-black mb-2">{{ $course->details }}</p>
+                                                      <p class="card-text text-secondary mb-2">{{ $course->details }}</p>
+                                                      <p class="text-success text-end me-3">{{ $course->fee }} টাকা</p>
                                                       <p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p>
+
                                                     </div>
                                                     <div class="card-footer p-5 pt-0 border-top-0 bg-transparent">
                                                         @if(Auth::check() && Auth::user()->role === 'trainer')

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('live_class_time')->nullable();  // For Live Class Time
             $table->integer('live_classes')->nullable();    // Number of Live Classes
             $table->integer('projects')->nullable();        // Number of Projects
+            $table->decimal('fee', 8, 2);
         });
     }
 

@@ -36,6 +36,10 @@
 
                 <label for="" class="form-label mt-3">Number of Projects</label>
                 <input type="number" name="projects" placeholder="Enter Number of Projects" class="form-control">
+                
+                <label for="" class="form-label mt-3">Course Fee</label>
+                <input type="number" name="fee" placeholder="Enter Course Fee" class="form-control" required>
+
                 <div class="row">
                     <div class="mt-3">
                         <button type="submit" class="btn btn-info w-100" name="submit" value="Create">Add Course</button>

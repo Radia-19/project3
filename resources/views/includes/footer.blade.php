@@ -50,7 +50,7 @@
                 <p>Dive in Deeper Knowledge</p>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Join Now">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><i class="bi bi-box-arrow-in-right"></i></button>
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a class="text-white" style="text-decoration: none" href="{{route('register.show')}}"><i class="bi bi-box-arrow-in-right"></i></a></button>
                 </div>
 
             </div>

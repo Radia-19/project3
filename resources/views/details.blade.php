@@ -50,6 +50,10 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>প্রফেশনাল সার্টিফিকেট</p>
                         </div>
                     </div>
+
+                    <p class="text-success text-end me-3">{{ $course->fee }} টাকা</p>
+                    <hr>
+
                     <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('addStudent') }}" id="actionButton">এখনই ভর্তি হোন</a>
                 </div>
                 <div>

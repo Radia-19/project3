@@ -22,9 +22,6 @@
                 <label for="" class="form-label mt-3">Course Video</label>
                 <input type="file" name="video" accept="video/*" class="form-control">
 
-                {{-- <label for="" class="form-label mt-3">Video URL</label>
-                <input type="text" name="video" placeholder="Enter Video URL" class="form-control"> --}}
-
                 <label for="" class="form-label mt-3">Batch Start Date</label>
                 <input type="date" name="batch_start" class="form-control" value="{{$course->batch_start}}">
 
@@ -39,6 +36,10 @@
 
                 <label for="" class="form-label mt-3">Number of Projects</label>
                 <input type="number" name="projects" placeholder="Enter Number of Projects" class="form-control" value="{{$course->projects}}">
+
+                <label for="" class="form-label mt-3">Course Fee</label>
+                <input type="number" name="fee" placeholder="Enter Course Fee" class="form-control" value="{{$course->fee}}" required>
+
                 <div class="row">
                     <div class="mt-3">
                         <button type="submit" class="btn btn-info w-100" name="submit" value="Create">Update Course</button>

@@ -6,13 +6,13 @@ Add Student
 
 @section('content')
 <div class="container m-5">
-    @if(session('message'))
+  @if(session('message'))
     <div class="alert alert-success">
         {{ session('message') }}
     </div>
-@endif
+  @endif
 
-    <h2 class="page-title">Enroll New Student</h2>
+    <h2 class="page-title">Enroll New Student Here</h2>
     <div class="row mb-2">
       <div class="col-lg-12">
         <div class="card">
@@ -20,49 +20,56 @@ Add Student
             <form class="forms-sample" method="POST" action="{{ route('storeStudent') }}" enctype="multipart/form-data">
               @csrf
               <div class="form-group mt-2">
-                <label>Student Name: </label>
+                <label>Name: </label>
                 @error('studentName')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
                 <input type="text" class="form-control" name="studentName" placeholder=" Name "/>
               </div>
               <div class="form-group mt-2">
-                <label>Student Registation No: </label>
+                <label>Registation No: </label>
                 @error('studentRegistation')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
                 <input type="text" class="form-control" name="studentRegistation" placeholder=" Registation "/>
               </div>
               <div class="form-group mt-2">
-                <label>Student Father's Name: </label>
+                <label>Father's Name: </label>
                 @error('studentFatherName')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
                 <input type="text" class="form-control" name="studentFatherName" placeholder=" Father's Name "/>
               </div>
               <div class="form-group mt-2">
-                <label>Student Mother's Name: </label>
+                <label>Mother's Name: </label>
                 @error('studentMotherName')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
                 <input type="text" class="form-control" name="studentMotherName" placeholder=" Mother's Name "/>
               </div>
               <div class="form-group mt-2">
-                <label>Student Phone No: </label>
+                <label>Phone No: </label>
                 @error('studentPhone')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
                 <input type="text" class="form-control" name="studentPhone" placeholder=" Phone "/>
               </div>
               <div class="form-group mt-2">
-                <label>Student Address: </label>
+                <label>Address: </label>
                 @error('studentAddress')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
                 <input type="text" class="form-control" name="studentAddress" placeholder=" Address "/>
               </div>
               <div class="form-group mt-2">
-                <label>Student Department: </label>
+                <label>Course: </label>
+                {{-- @error('studentAddress')
+                    <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
+                @enderror --}}
+                <input type="text" class="form-control" name="course" placeholder=" Course "/>
+              </div>
+              <div class="form-group mt-2">
+                <label>Department: </label>
                 @error('studentDepartment')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
@@ -78,7 +85,7 @@ Add Student
 
               </div>
               <div class="form-group mt-2">
-                <label>Student Image: </label>
+                <label>Image: </label>
                 @error('studentImage')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
