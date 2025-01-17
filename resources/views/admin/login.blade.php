@@ -22,11 +22,9 @@
           <div class="bg-white p-4 p-md-5 rounded shadow-sm">
             <div class="row">
               <div class="col-12">
-                <div class="text-center mb-5">
-                  <a href="#!">
-                    <img src="{{asset('admin/img/7j0XhM-LogoMakr.png') }}" alt="BootstrapBrain Logo" width="90" height="80">
+                <div class="text-center m-3">
+                    <img src="{{asset('admin/img/p3LogoMakr.png') }}" alt="BootstrapBrain Logo" width="90" height="80">
                     <h3 class="mt-2">Admin Login</h3>
-                  </a>
                 </div>
               </div>
             </div>
@@ -58,7 +56,7 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="submit">Log In</button>
+                    <button class="btn btn-info btn-lg" type="submit">Log In</button>
                   </div>
                 </div>
               </div>

@@ -14,7 +14,7 @@
            <div class="col-4 offset-4">
                @include('errors.error')
                <div class="mt-5" style="text-align: center;">
-                <img style="height: 70px;"  src="{{ asset('image/0fKpIQ-LogoMakr.png')}}"  alt="Example Image">
+                <img style="height: 70px;"  src="{{ asset('image/p3LogoMakr.png')}}"  alt="Example Image">
                </div>
                <h3 class="mt-3 mb-3 text-center">Login Here!</h3>
                <form  action="{{ route('login') }}" class="form-group" method="POST">

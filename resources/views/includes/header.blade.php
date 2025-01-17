@@ -27,7 +27,7 @@
             <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
             <a href="{{ route('course') }}" class="nav-item nav-link">Courses</a>
 
-            @if(Auth::check())
+        @if(Auth::check())
             @if (Auth::user()->role === 'user')
                 <!-- User Navigation -->
                 <a href="{{ route('addStudent') }}" class="nav-item nav-link">Enrollment</a>

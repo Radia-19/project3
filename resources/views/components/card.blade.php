@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="card-footer p-5 pt-0 border-top-0 bg-transparent">
-        @if(Auth::user()->role === 'trainer')
+        @if(Auth::check() && Auth::user()->role === 'trainer')
             File ID: {{ $bookData->id }}
             <a class="text-info-emphasis ms-2 me-2" href="{{ route('updatebooks.show',[$bookData->id]) }}">Edit</a>
             <a class="text-danger " onclick="return confirm('Are you sure?')" href="{{ route('books.delete',[$bookData->id]) }}">Delete</a>

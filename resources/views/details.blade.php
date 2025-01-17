@@ -50,7 +50,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>প্রফেশনাল সার্টিফিকেট</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('addStudent') }}">এখনই ভর্তি হোন</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('addStudent') }}" id="actionButton">এখনই ভর্তি হোন</a>
                 </div>
                 <div>
                     <h6 class="section-title bg-white text-start text-primary pe-3">ওয়েব ডিজাইন কি? কিভাবে শিখবেন এবং কত দিন সময় লাগবে?</h6>
@@ -114,6 +114,19 @@
 
 @endsection
 
-@push('css')
-
+@push('js')
+<script>
+    document.getElementById("actionButton").addEventListener("click", function(event) {
+        // Check if the user is authenticated using JavaScript
+        @if(Auth::check())
+            // Perform the action here (e.g., redirect, submit form, etc.)
+            alert("Action performed successfully!");
+        @else
+            // If not authenticated, show the notification
+            event.preventDefault();  // Prevent button action
+            alert("You have to login first!");
+            window.location.href = "{{ route('login') }}"; // Redirect to the login page
+        @endif
+    });
+</script>
 @endpush

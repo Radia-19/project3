@@ -32,9 +32,9 @@
                                                       <p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p>
                                                     </div>
                                                     <div class="card-footer p-5 pt-0 border-top-0 bg-transparent">
-                                                        @if(Auth::user()->role === 'trainer')
+                                                        @if(Auth::check() && Auth::user()->role === 'trainer')
                                                             Course ID: {{ $course->id }}
-                                                            <a class="text-info-emphasis ms-2 me-2" href="{{ route('updatecourse.show',[$course->id]) }}">Edit</a>
+                                                            <a class="text-info ms-2 me-2" href="{{ route('updatecourse.show',[$course->id]) }}">Edit</a>
                                                             <a class="text-danger " onclick="return confirm('Are you sure?')" href="{{ route('course.delete',[$course->id]) }}">Delete</a>
                                                         @endif
                                                     </div>
