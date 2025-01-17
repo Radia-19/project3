@@ -24,13 +24,19 @@
                             @foreach($allCourses as $course)
                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 ">
                                                 <div class="card m-2" style="width: 18rem; border-radius: 15px;">
-                                                    <a href="{{ route('details') }}" style="text-decoration: none">
+                                                    <a href="{{ route('course.details', $course->id) }}" style="text-decoration: none">
                                                         <img src="{{ asset($course->image) }}" class="card-img-top rounded-top-3" alt="{{ $course->name }}">
-
                                                     <div class="card-body">
                                                       <h5 class="card-title text-black">{{ $course->name }}</h5>
                                                       <p class="card-text text-black mb-2">{{ $course->details }}</p>
                                                       <p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p>
+                                                    </div>
+                                                    <div class="card-footer p-5 pt-0 border-top-0 bg-transparent">
+                                                        @if(Auth::user()->role === 'trainer')
+                                                            Course ID: {{ $course->id }}
+                                                            <a class="text-info-emphasis ms-2 me-2" href="{{ route('updatecourse.show',[$course->id]) }}">Edit</a>
+                                                            <a class="text-danger " onclick="return confirm('Are you sure?')" href="{{ route('course.delete',[$course->id]) }}">Delete</a>
+                                                        @endif
                                                     </div>
                                                     </a>
                                                 </div>

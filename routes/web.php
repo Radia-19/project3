@@ -22,7 +22,13 @@ Route::get('/search', [HomePageController::class,'search'])->name('search');
 Route::get('/course', [HomePageController::class,'course'])->name('course');
 Route::get('course/create',[CourseController::class,'create'])->name('course.create.show');
 Route::post('course/create',[CourseController::class,'store'])->name('course.create');
-Route::get('/details', [CourseController::class,'details'])->name('details');
+Route::get('/course/{id}', [CourseController::class, 'show'])->name('course.details');
+// Route::put('/courses/{id}', [CourseController::class, 'update'])->name('course.update');
+// Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('course.destroy');
+Route::get('course/edit/{id}', [CourseController::class, 'updateShow'])->name('updatecourse.show');
+Route::post('course/edit/{id}', [CourseController::class, 'update'])->name('course.update');
+Route::get('course/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
+
 
 //Trainers
 Route::get('/task', [HomePageController::class,'task'])->name('task');

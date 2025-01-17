@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Course Details')
+@section('title', $course->name . ' Details')
 
 @push('css')
 
@@ -14,13 +14,20 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        {{-- <img class="img-fluid position-absolute w-100 h-100" src="image/image-700x700.jpg" alt="" style="object-fit: cover;"> --}}
-                        <video src="{{ asset('video/basic.mp4') }}" width="600" height="380" style="object-fit: cover;" autoplay muted loop controls></video>
+                        {{-- <video src="{{ asset('video/basic.mp4') }}" width="600" height="380" style="object-fit: cover;" autoplay muted loop controls></video> --}}
+                        <!-- Video Section -->
+                    @if($course->video)
+                        <video src="{{ asset($course->video) }}" width="600" height="380" style="object-fit: cover;" autoplay muted loop controls></video>
+                    @else
+                        <img class="img-fluid" src="{{ asset($course->image) }}" alt="{{ $course->name }}">
+                    @endif
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <h1 class="mb-4">বেসিক ওয়েব ডিজাইন</h1>
+                    <h1 class="mb-4">{{ $course->name }}</h1>
+                    <p class="mb-4">{{ $course->details }}</p>
+                    <hr>
                     <p class="mb-4">আমাদের ওয়েব ডিজাইন কোর্সের মাধ্যমে আপনার লক্ষ্য অর্জন করুন এবং নিজেকে শক্তিশালী করুন</p>
                     <p class="mb-4">আমরা প্রতিভাবান প্রশিক্ষকদের সাথে সেরা মডিউল অফার করি</p>
                     <div class="row gy-2 gx-4 mb-4">
@@ -52,9 +59,9 @@
                           <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">ব্যাচ শুরু</h5>
-                              <p class="card-text">২০ জানুয়ারি, ২০২৫</p>
+                              <p class="card-text">{{ \Carbon\Carbon::parse($course->batch_start)->format('d M, Y') }}</p>
                               <h5 class="card-title">ভর্তি শেষ</h5>
-                              <p class="card-text">১৬ জানুয়ারি, ২০২৫</p>
+                              <p class="card-text">{{ \Carbon\Carbon::parse($course->admission_end)->format('d M, Y') }}</p>
                             </div>
                           </div>
                         </div>
@@ -62,7 +69,7 @@
                           <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">লাইভ ক্লাস</h5>
-                              <p class="card-text"><i class="bi bi-border-style"></i> রাত ৯:০০- ১০:৩০ (রবি,মঙ্গল)</p>
+                              <p class="card-text"><i class="bi bi-border-style"></i> {{ $course->live_class_time }}</p>
                               <h5 class="card-title">ভর্তি চলছে</h5>
                               <p class="card-text"><i class="bi bi-border-style"></i> ১ম ব্যাচে</p>
                             </div>
@@ -72,8 +79,8 @@
                             <div class="card">
                               <div class="card-body">
                                 <h5 class="card-title">কতগুলো ক্লাস</h5>
-                                <p class="card-text"><i class="bi bi-border-style"></i> ৪২ টি  লাইভ ক্লাস</p>
-                                <p><i class="bi bi-boxes"></i> ৫ টি প্রজেক্টসহ</p>
+                                <p class="card-text"><i class="bi bi-border-style"></i> {{ $course->live_classes }} টি  লাইভ ক্লাস</p>
+                                <p><i class="bi bi-boxes"></i> {{ $course->projects }} টি প্রজেক্টসহ</p>
                               </div>
                             </div>
                           </div>
