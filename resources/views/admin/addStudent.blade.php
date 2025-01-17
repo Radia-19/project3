@@ -61,13 +61,20 @@ Add Student
                 @enderror
                 <input type="text" class="form-control" name="studentAddress" placeholder=" Address "/>
               </div>
-              <div class="form-group mt-2">
+
+              {{-- <div class="form-group mt-2">
                 <label>Course: </label>
-                {{-- @error('studentAddress')
+                @error('course')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
-                @enderror --}}
-                <input type="text" class="form-control" name="course" placeholder=" Course "/>
-              </div>
+                @enderror
+                <select name="course" class="form-control" required>
+                    <option value="">Select a Course</option>
+                    @foreach($allCourses as $course)
+                        <option value="{{ $course->id }}">{{ $course->name }}</option>
+                    @endforeach
+                </select>
+            </div> --}}
+
               <div class="form-group mt-2">
                 <label>Department: </label>
                 @error('studentDepartment')
@@ -82,8 +89,8 @@ Add Student
                     <option value="5">Basic Course</option>
                     <option value="6">Cyber Security</option>
                 </select>
-
               </div>
+
               <div class="form-group mt-2">
                 <label>Image: </label>
                 @error('studentImage')
@@ -100,10 +107,10 @@ Add Student
                     <option value="paypal">Bkash/Nagad/Rocket</option>
                 </select>
             </div>
-            <div class="form-group mt-2">
-                <label for="amount">Amount Paid</label>
-                <input type="number" name="amount" id="amount" class="form-control" required>
-            </div>
+            {{-- <div class="form-group mt-2">
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" id="amount" class="form-control" required readonly value="{{ old('amount') }}">
+            </div> --}}
               <div class="text-center">
                <input type="submit" class=" btn btn-primary enter-btn m-3" value="Save" name="studentSubmit"/>
             </div>
@@ -115,3 +122,13 @@ Add Student
   </div>
 @endsection
 {{-- <input type="submit" class=" btn btn-primary enter-btn m-3 w-100" value="Save Student" name="studentSubmit"/> --}}
+
+@push('js')
+{{-- <script>
+document.querySelector('select[name="course"]').addEventListener('change', function () {
+    const selectedCourse = this.options[this.selectedIndex];
+    const courseFee = selectedCourse.getAttribute('data-fee');
+    document.querySelector('#amount').value = courseFee || '';
+});
+</script> --}}
+@endpush

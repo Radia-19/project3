@@ -26,7 +26,7 @@ class AddStudentController extends Controller
             'studentMotherName' => 'required',
             'studentPhone' => 'required',
             'studentAddress' => 'required',
-            'studentDepartment' => 'required',
+            //'studentDepartment' => 'required',
             'studentImage' => 'required|mimes:jpeg,jpg,png,PNG',
         ]);
 
@@ -149,7 +149,7 @@ class AddStudentController extends Controller
 
         $student->update($validatedData);
 
-        return redirect()->route('allStudents')->with('message', 'Student successfully updated!');
+        return to_route('allStudents')->with('message', 'Student successfully updated!');
     }
 
     public function deleteStudent($id)
@@ -192,6 +192,34 @@ class AddStudentController extends Controller
         $students = Student::where('batch', $batchNumber)->get();
         return view('admin.batchStudents', compact('students', 'batchNumber'));
     }
+
+    // public function assignStudentToCourse(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'student_id' => 'required|exists:students,id',
+    //         'course_id' => 'required|exists:courses,id',
+    //     ]);
+
+    //     $student = Student::findOrFail($validated['student_id']);
+    //     $student->courses()->attach($validated['course_id']); // Add the relationship
+
+    //     return redirect()->back()->with('success', 'Student assigned to course successfully.');
+    // }
+
+    // public function removeStudentFromCourse(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'student_id' => 'required|exists:students,id',
+    //         'course_id' => 'required|exists:courses,id',
+    //     ]);
+
+    //     $student = Student::findOrFail($validated['student_id']);
+    //     $student->courses()->detach($validated['course_id']); // Remove the relationship
+
+    //     return redirect()->back()->with('success', 'Student removed from course successfully.');
+    // }
+
+
 
     // public function index(){
 

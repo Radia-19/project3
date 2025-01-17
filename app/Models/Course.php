@@ -11,4 +11,9 @@ class Course extends Model
 
     protected $guarded = [];
     protected $table = 'courses';
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'course_student', 'course_id', 'student_id');
+    }
 }
