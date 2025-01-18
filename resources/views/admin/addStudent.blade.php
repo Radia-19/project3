@@ -62,32 +62,16 @@ Add Student
                 <input type="text" class="form-control" name="studentAddress" placeholder=" Address "/>
               </div>
 
-              {{-- <div class="form-group mt-2">
-                <label>Course: </label>
-                @error('course')
+              <div class="form-group">
+                <label for="course_id">Select Course</label>
+                @error('course_id')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
-                <select name="course" class="form-control" required>
-                    <option value="">Select a Course</option>
-                    @foreach($allCourses as $course)
-                        <option value="{{ $course->id }}">{{ $course->name }}</option>
+                <select name="course_id" id="course_id" class="form-control" required>
+                    <option value="" disabled selected>Select a course</option>
+                    @foreach($courses as $course)
+                        <option value="{{ $course->id }}" {{ old('course_id') == $course->id ? 'selected' : '' }}>{{ $course->name }} (Fee: {{ $course->fee }} BDT)</option>
                     @endforeach
-                </select>
-            </div> --}}
-
-              <div class="form-group mt-2">
-                <label>Department: </label>
-                @error('studentDepartment')
-                    <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
-                @enderror
-                <select name="studentDepartment" class="form-control">
-                    <option value="">Select</option>
-                    <option value="1">Graphic Design</option>
-                    <option value="2">Animation</option>
-                    <option value="3">Web development</option>
-                    <option value="4">Android App</option>
-                    <option value="5">Basic Course</option>
-                    <option value="6">Cyber Security</option>
                 </select>
               </div>
 
@@ -107,12 +91,9 @@ Add Student
                     <option value="paypal">Bkash/Nagad/Rocket</option>
                 </select>
             </div>
-            {{-- <div class="form-group mt-2">
-                <label for="amount">Amount</label>
-                <input type="number" name="amount" id="amount" class="form-control" required readonly value="{{ old('amount') }}">
-            </div> --}}
+
               <div class="text-center">
-               <input type="submit" class=" btn btn-primary enter-btn m-3" value="Save" name="studentSubmit"/>
+               <input type="submit" class=" btn btn-primary enter-btn m-3" value="Enroll Student" name="studentSubmit"/>
             </div>
             </form>
           </div>
@@ -121,14 +102,19 @@ Add Student
     </div>
   </div>
 @endsection
-{{-- <input type="submit" class=" btn btn-primary enter-btn m-3 w-100" value="Save Student" name="studentSubmit"/> --}}
+
 
 @push('js')
-{{-- <script>
-document.querySelector('select[name="course"]').addEventListener('change', function () {
-    const selectedCourse = this.options[this.selectedIndex];
-    const courseFee = selectedCourse.getAttribute('data-fee');
-    document.querySelector('#amount').value = courseFee || '';
-});
-</script> --}}
+
 @endpush
+
+
+{{-- <div class="form-group mt-2">
+                <label for="payment_method">Payment Method</label>
+                <select name="payment_method" id="payment_method" class="form-control" required>
+                    <option value="card" {{ old('payment_method') == 'card' ? 'selected' : '' }}>Credit/Debit Card</option>
+                    <option value="bank" {{ old('payment_method') == 'bank' ? 'selected' : '' }}>Bank Transfer</option>
+                    <option value="cash" {{ old('payment_method') == 'cash' ? 'selected' : '' }}>Cash</option>
+                    <option value="paypal" {{ old('payment_method') == 'paypal' ? 'selected' : '' }}>Bkash/Nagad/Rocket</option>
+                </select>
+              </div> --}}

@@ -13,13 +13,20 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('name');
             $table->longText('details');
             $table->string( 'image');
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('video')->nullable();
+            $table->date('batch_start')->nullable();
+            $table->date('admission_end')->nullable();
+            $table->string('live_class_time')->nullable();
+            $table->integer('live_classes')->nullable();
+            $table->integer('projects')->nullable();
+            $table->decimal('fee', 8, 2);
+            $table->timestamps();
 
             $table->foreign('user_id')->on('users')->references('id')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

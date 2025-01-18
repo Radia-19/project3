@@ -124,7 +124,7 @@
         // Check if the user is authenticated using JavaScript
         @if(Auth::check())
             // Perform the action here (e.g., redirect, submit form, etc.)
-            alert("Action performed successfully!");
+            alert("Proceed to enrollment!");
         @else
             // If not authenticated, show the notification
             event.preventDefault();  // Prevent button action

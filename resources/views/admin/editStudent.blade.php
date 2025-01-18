@@ -56,6 +56,16 @@ Edit Student
                 <input type="text" class="form-control" name="studentAddress" value="{{ $editStudent->studentAddress }}"/>
               </div>
               <div class="form-group">
+                <label for="course_id">Select Course</label>
+                <select name="course_id" id="course_id" class="form-control" required>
+                    <option value="" disabled selected>Select a course</option>
+                    @foreach($courses as $course)
+                        <option value="{{ $course->id }}">{{ $course->name }} (Fee: {{ $course->fee }})</option>
+                    @endforeach
+                </select>
+            </div>
+
+              {{-- <div class="form-group">
                 <label>Student Department: *</label>
                 @error('studentDepartment')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
@@ -70,7 +80,7 @@ Edit Student
                     <option value="6">Cyber Security</option>
                 </select>
 
-              </div>
+              </div> --}}
               <div class="form-group">
                 <label>Student Image: *</label>
                 @error('studentImage')

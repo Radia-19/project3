@@ -126,7 +126,6 @@ class TeacherController extends Controller
 
     }
 
-
     public function deleteTeacher($id){
         $teacherImage=DB::table('teachers')->where('id',$id)->first();
         $image= $teacherImage->teacherImage;
@@ -146,8 +145,5 @@ class TeacherController extends Controller
             return Redirect()->back()->with($notificatin);
         }
     }
-
-
-
 
 }

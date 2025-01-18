@@ -17,7 +17,7 @@ All Student
                 <th>Name</th>
                 <th>Registation</th>
                 {{-- <th>Phone</th> --}}
-                <th>Department</th>
+                <th>Course</th>
                 <th>Image</th>
                 <th>Batch</th>
                 <th>Actions</th>
@@ -29,23 +29,8 @@ All Student
                 <tr>
                     <td>{{ $student->studentName }}</td>
                     <td>{{ $student->studentRegistation}}</td>
-                    {{-- <td>{{ $student->studentPhone}}</td> --}}
                     <td>
-                        @if($student->studentDepartment==1)
-                        <span>{{ 'Graphic Design' }}</span>
-                        @elseif($student->studentDepartment==2)
-                        <span>{{ 'Animation' }}</span>
-                        @elseif($student->studentDepartment==3)
-                        <span>{{ 'Web Development' }}</span>
-                        @elseif($student->studentDepartment==4)
-                        <span>{{ 'Android App' }}</span>
-                        @elseif($student->studentDepartment==5)
-                        <span>{{ 'Basic Course' }}</span>
-                        @elseif($student->studentDepartment==6)
-                        <span>{{ 'Cyber Security' }}</span>
-                        @else
-                        <span>{{ 'Not Defined' }}</span>
-                        @endif
+                        <span>{{ $student->course_name ?? 'No Course Assigned' }}</span>
                     </td>
                     <td><img src="{{ asset($student->studentImage) }}" alt="img" width="50px"></td>
                     <td>{{ $student->batch }}</td>
@@ -61,7 +46,7 @@ All Student
                 </tr>
                 @empty
                   <tr>
-                    <td class="text-center" colspan="6">No Data Found!</td>
+                    <td class="text-center" colspan="7">No Data Found!</td>
                   </tr>
            @endforelse
           </tbody>

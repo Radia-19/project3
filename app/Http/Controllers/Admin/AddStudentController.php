@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Student;
 use App\Models\Payment;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,8 @@ class AddStudentController extends Controller
 {
     public function addStudent()
     {
-        return view('admin.addStudent');
+        $courses = Course::all(['id', 'name', 'fee']);
+        return view('admin.addStudent', compact('courses'));
     }
 
     public function storeStudent(Request $request)
@@ -26,30 +28,33 @@ class AddStudentController extends Controller
             'studentMotherName' => 'required',
             'studentPhone' => 'required',
             'studentAddress' => 'required',
-            //'studentDepartment' => 'required',
             'studentImage' => 'required|mimes:jpeg,jpg,png,PNG',
+            'course_id' => 'required|exists:courses,id',
+            //'payment_method' => 'required|string',
         ]);
 
         $data = $validatedData;
 
-        // Check the current batch
-        $currentBatch = Student::max('batch') ?? 1; // Get the current batch or default to 1
+        $course = Course::find($data['course_id']);
+        $data['course_name'] = $course->name;
+        $data['course_fee'] = $course->fee;
+
+        $currentBatch = Student::max('batch') ?? 1;
         $studentsInCurrentBatch = Student::where('batch', $currentBatch)->count();
 
         if ($studentsInCurrentBatch >= 10) {
-            // Move to the next batch and mark the student as pending
+
             $data['batch'] = $currentBatch + 1;
-            $data['status'] = 'approved';
-            $message = 'You have been added to the current batch and approved.';
-        } else {
-            // Add the student to the current batch and approve them
-            $data['batch'] = $currentBatch;
             $data['status'] = 'pending';
             $message = 'The batch is full. You have been moved to the next batch and marked as pending.';
+        } else {
+
+            $data['batch'] = $currentBatch;
+            $data['status'] = 'approved';
+            $message = 'You have been added to the current batch and approved.';
         }
 
 
-        // Handle student image
         if ($request->hasFile('studentImage')) {
             $image = $request->file('studentImage');
             $imageName = hexdec(uniqid()) . '.' . strtolower($image->getClientOriginalExtension());
@@ -65,7 +70,6 @@ class AddStudentController extends Controller
 
     public function approveShow()
     {
-        // Fetch all pending students for approval
         $students = Student::where('status', 'pending')->get();
 
         return view('admin.approvedShow', compact('students'));
@@ -114,8 +118,11 @@ class AddStudentController extends Controller
 
     public function editStudent($id)
     {
+        // $editStudent = Student::findOrFail($id);
+        // return view('admin.editStudent', compact('editStudent'));
         $editStudent = Student::findOrFail($id);
-        return view('admin.editStudent', compact('editStudent'));
+        $courses = Course::all(['id', 'name', 'fee']);
+        return view('admin.editStudent', compact('editStudent', 'courses'));
     }
 
 
@@ -128,11 +135,15 @@ class AddStudentController extends Controller
             'studentMotherName' => 'required',
             'studentPhone' => 'required',
             'studentAddress' => 'required',
-            'studentDepartment' => 'required',
             'studentImage' => 'nullable|mimes:jpeg,jpg,png,PNG',
+            'course_id' => 'required|exists:courses,id',
         ]);
 
         $student = Student::findOrFail($id);
+
+        $course = Course::find($validatedData['course_id']);
+        $validatedData['course_name'] = $course->name;
+        $validatedData['course_fee'] = $course->fee;
 
         if ($request->hasFile('studentImage')) {
             $image = $request->file('studentImage');
