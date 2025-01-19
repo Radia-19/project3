@@ -42,7 +42,7 @@
 
                 <div class="row">
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-info w-100" name="submit" value="Create">Update Course</button>
+                        <button type="submit" class="btn btn-info w-100 text-white" name="submit" value="Create">Update Course</button>
                     </div>
                 </div>
             </form>
