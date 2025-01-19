@@ -21,7 +21,7 @@ class CourseController extends Controller
            'name' => 'required|min:5',
            'details'=> 'required',
            'image'=> 'required|image|mimes:jpg,jpeg,png|max:5120',
-           'video' => 'nullable|file|mimes:mp4,avi,mov',
+           'video' => 'nullable|file|mimes:mp4,avi,mov|max:51200',
            'batch_start' => 'nullable|date',
            'admission_end' => 'nullable|date',
            'live_class_time' => 'nullable|string',
@@ -31,16 +31,19 @@ class CourseController extends Controller
         ]);
         $validator->validate();
 
-        $imagePath = null;
+
         $videoPath = null;
+
 
         if ($request->hasFile('video')) {
             $video = $request->file('video');
             $videoName = hexdec(uniqid()) . '.' . strtolower($video->getClientOriginalExtension());
-            $videoPath = 'upload/' . $videoName;
+            $videoPath = 'upload/videos/' . $videoName;
             $video->move(public_path('upload/videos'), $videoName); // Storing video in upload/videos directory
         }
+        //dd($videoPath);
 
+        $imagePath = null;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = hexdec(uniqid()) . '.' . strtolower($image->getClientOriginalExtension());
