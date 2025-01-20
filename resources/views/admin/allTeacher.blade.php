@@ -17,7 +17,7 @@ All allTrainer
                 <th>Name</th>
                 <th>Registation</th>
                 <th>Phone</th>
-                <th>Department</th>
+                <th>Course</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -26,7 +26,7 @@ All allTrainer
            @foreach ($allTeachers as $teacher)
                 <tr>
                     <td>{{ $teacher->teacherName}}</td>
-                    <td>{{ $teacher->teacherRegistation}}</td>
+                    <td>{{ $teacher->teacherRegistration}}</td>
                     <td>{{ $teacher->teacherPhone}}</td>
                     <td>
                         @if($teacher->teacherDepartment==1)
@@ -36,7 +36,7 @@ All allTrainer
                         @elseif($teacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
                         @elseif($teacher->teacherDepartment==4)
-                        <span>{{ 'Android App' }}</span>
+                        <span>{{ 'Digital Marketing' }}</span>
                         @elseif($teacher->teacherDepartment==5)
                         <span>{{ 'Basic Course' }}</span>
                         @elseif($teacher->teacherDepartment==6)

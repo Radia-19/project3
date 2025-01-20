@@ -17,7 +17,7 @@ class TeacherController extends Controller
 
         $validatedData = $request->validate([
             'teacherName' => 'required',
-            'teacherRegistation' => 'required|unique:teachers|min:7',
+            'teacherRegistration' => 'required|unique:teachers|min:7',
             'teacherPhone' => 'required',
             'teacherEmail' => 'required',
             'teacherAddress' => 'required',
@@ -28,7 +28,7 @@ class TeacherController extends Controller
 
         $data=array();
         $data['teacherName']=$request->teacherName;
-        $data['teacherRegistation']=$request->teacherRegistation;
+        $data['teacherRegistration']=$request->teacherRegistration;
         $data['teacherPhone']=$request->teacherPhone;
         $data['teacherEmail']=$request->teacherEmail;
         $data['teacherAddress']=$request->teacherAddress;
@@ -80,7 +80,7 @@ class TeacherController extends Controller
 
         $validatedData = $request->validate([
             'teacherName' => 'required',
-            'teacherRegistation' => 'required|min:7',
+            'teacherRegistration' => 'required|min:7',
             'teacherPhone' => 'required',
             'teacherEmail' => 'required',
             'teacherAddress' => 'required',
@@ -90,7 +90,7 @@ class TeacherController extends Controller
 
         $data=array();
         $data['teacherName']=$request->teacherName;
-        $data['teacherRegistation']=$request->teacherRegistation;
+        $data['teacherRegistration']=$request->teacherRegistation;
         $data['teacherPhone']=$request->teacherPhone;
         $data['teacherEmail']=$request->teacherEmail;
         $data['teacherAddress']=$request->teacherAddress;

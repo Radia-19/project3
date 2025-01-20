@@ -22,32 +22,32 @@ Andriod Department
             </tr>
           </thead>
           <tbody>
-           @foreach ($appStudents as $appStudent)
+           @foreach ($appTeachers as $appTeacher)
                 <tr>
-                    <td>{{ $appStudent->studentName }}</td>
-                    <td>{{ $appStudent->studentRegistration}}</td>
-                    <td>{{ $appStudent->studentPhone}}</td>
+                    <td>{{ $appTeacher->teacherName }}</td>
+                    <td>{{ $appTeacher->teacherRegistration}}</td>
+                    <td>{{ $appTeacher->teacherPhone}}</td>
                     <td>
-                        @if($appStudent->studentDepartment==1)
+                        @if($appTeacher->teacherDepartment==1)
                         <span>{{ 'Graphic Design' }}</span>
-                        @elseif($appStudent->studentDepartment==2)
+                        @elseif($appTeacher->teacherDepartment==2)
                         <span>{{ 'Animation' }}</span>
-                        @elseif($appStudent->studentDepartment==3)
+                        @elseif($appTeacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
-                        @elseif($appStudent->studentDepartment==4)
+                        @elseif($appTeacher->teacherDepartment==4)
                         <span>{{ 'Android App' }}</span>
-                        @elseif($appStudent->studentDepartment==5)
+                        @elseif($appTeacher->teacherDepartment==5)
                         <span>{{ 'Basic Course' }}</span>
-                        @elseif($animeStudent->studentDepartment==6)
+                        @elseif($animeteacher->teacherDepartment==6)
                         <span>{{ 'Cyber Security' }}</span>
                         @else
                         <span>{{ 'Not Defined' }}</span>
                         @endif
                     </td>
-                    <td><img src="{{ asset($appStudent->studentImage) }}" alt="img" width="50px"></td>
+                    <td><img src="{{ asset($appTeacher->teacherImage) }}" alt="img" width="50px"></td>
                     <td>
-                    <a href="{{ url('view/student').$appStudent->id }}" class="btn btn-primary"> view</a>
-                    <a href="{{ url('edit/student').$appStudent->id }}" class="btn btn-warning"> Edit</a>
+                    <a href="{{ url('view/teacher').$appTeacher->id }}" class="btn btn-primary"> view</a>
+                    <a href="{{ url('edit/teacher').$appTeacher->id }}" class="btn btn-warning"> Edit</a>
                     <a href="" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Delete</a>
                     </td>
                 </tr>
@@ -75,7 +75,7 @@ Andriod Department
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="{{ url('delete/student').$appStudent->id }}" class="btn btn-primary">Delete</a>
+          <a href="{{ url('delete/teacher').$appTeacher->id }}" class="btn btn-primary">Delete</a>
         </div>
       </div>
     </div>

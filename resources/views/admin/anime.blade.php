@@ -22,32 +22,32 @@ Anime Department
             </tr>
           </thead>
           <tbody>
-           @foreach ($animeStudents as $animeStudent)
+           @foreach ($animeTeachers as $animeTeacher)
                 <tr>
-                    <td>{{ $animeStudent->studentName }}</td>
-                    <td>{{ $animeStudent->studentRegistration}}</td>
-                    <td>{{ $animeStudent->studentPhone}}</td>
+                    <td>{{ $animeTeacher->teacherName }}</td>
+                    <td>{{ $animeTeacher->teacherRegistration}}</td>
+                    <td>{{ $animeTeacher->teacherPhone}}</td>
                     <td>
-                        @if($animeStudent->studentDepartment==1)
+                        @if($animeTeacher->teacherDepartment==1)
                         <span>{{ 'Graphic Design' }}</span>
-                        @elseif($animeStudent->studentDepartment==2)
+                        @elseif($animeTeacher->teacherDepartment==2)
                         <span>{{ 'Animation' }}</span>
-                        @elseif($animeStudent->studentDepartment==3)
+                        @elseif($animeTeacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
-                        @elseif($animeStudent->studentDepartment==4)
+                        @elseif($animeTeacher->teacherDepartment==4)
                         <span>{{ 'Android App' }}</span>
-                        @elseif($animeStudent->studentDepartment==5)
+                        @elseif($animeTeacher->teacherDepartment==5)
                         <span>{{ 'Basic Course' }}</span>
-                        @elseif($animeStudent->studentDepartment==6)
+                        @elseif($animeTeacher->teacherDepartment==6)
                         <span>{{ 'Cyber Security' }}</span>
                         @else
                         <span>{{ 'Not Defined' }}</span>
                         @endif
                     </td>
-                    <td><img src="{{ asset($animeStudent->studentImage) }}" alt="img" width="50px"></td>
+                    <td><img src="{{ asset($animeTeacher->teacherImage) }}" alt="img" width="50px"></td>
                     <td>
-                    <a href="{{ url('view/student').$animeStudent->id }}" class="btn btn-primary"> view</a>
-                    <a href="{{ url('edit/student').$animeStudent->id }}" class="btn btn-warning"> Edit</a>
+                    <a href="{{ url('view/teacher').$animeTeacher->id }}" class="btn btn-primary"> view</a>
+                    <a href="{{ url('edit/teacher').$animeTeacher->id }}" class="btn btn-warning"> Edit</a>
                     <a href="" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Delete</a>
                     </td>
                 </tr>
@@ -75,7 +75,7 @@ Anime Department
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="{{ url('delete/student').$animeStudent->id }}" class="btn btn-primary">Delete</a>
+          <a href="{{ url('delete/teacher').$animeTeacher->id }}" class="btn btn-primary">Delete</a>
         </div>
       </div>
     </div>

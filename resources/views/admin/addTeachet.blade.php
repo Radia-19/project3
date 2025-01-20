@@ -21,11 +21,11 @@ Add Trainer
                 <input type="text" class="form-control" name="teacherName" placeholder=" Name *"/>
               </div>
               <div class="form-group">
-                <label>Trainer Registation No: *</label>
+                <label>Trainer Registration No: *</label>
                 @error('teacherRegistation')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
-                <input type="text" class="form-control" name="teacherRegistation" placeholder=" Registation *"/>
+                <input type="text" class="form-control" name="teacherRegistration" placeholder=" Registation *"/>
               </div>
               <div class="form-group">
                 <label>Trainer Phone No: *</label>
@@ -57,9 +57,9 @@ Add Trainer
                     <option value="">Select *</option>
                     <option value="1">Graphic Design</option>
                     <option value="2">Animation</option>
-                    <option value="3">Web development</option>
-                    <option value="4">Android App</option>
-                    <option value="5">Basic Course</option>
+                    <option value="3">Web Design & development</option>
+                    <option value="4">Digital Marketing</option>
+                    <option value="5">Basic Courses</option>
                     <option value="6">Cyber Security</option>
                 </select>
 

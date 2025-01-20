@@ -22,32 +22,32 @@ Graphic Design
             </tr>
           </thead>
           <tbody>
-           @foreach ($graphStudents as $graphStudent)
+           @foreach ($graphTeachers as $graphTeacher)
                 <tr>
-                    <td>{{ $graphStudent->studentName }}</td>
-                    <td>{{ $graphStudent->studentRegistration}}</td>
-                    <td>{{ $graphStudent->studentPhone}}</td>
+                    <td>{{ $graphTeacher->teacherName }}</td>
+                    <td>{{ $graphTeacher->teacherRegistration}}</td>
+                    <td>{{ $graphTeacher->teacherPhone}}</td>
                     <td>
-                        @if($graphStudent->studentDepartment==1)
+                        @if($graphTeacher->teacherDepartment==1)
                         <span>{{ 'Graphic Design' }}</span>
-                        @elseif($graphgraphStudent->studentDepartment==2)
+                        @elseif($graphgraphTeacher->teacherDepartment==2)
                         <span>{{ 'Animation' }}</span>
-                        @elseif($graphStudent->studentDepartment==3)
+                        @elseif($graphTeacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
-                        @elseif($graphStudent->studentDepartment==4)
+                        @elseif($graphTeacher->teacherDepartment==4)
                         <span>{{ 'Android App' }}</span>
-                        @elseif($graphStudent->studentDepartment==5)
+                        @elseif($graphTeacher->teacherDepartment==5)
                         <span>{{ 'Basic Course' }}</span>
-                        @elseif($animeStudent->studentDepartment==6)
+                        @elseif($animeteacher->teacherDepartment==6)
                         <span>{{ 'Cyber Security' }}</span>
                         @else
                         <span>{{ 'Not Defined' }}</span>
                         @endif
                     </td>
-                    <td><img src="{{ asset($graphStudent->studentImage) }}" alt="img" width="50px"></td>
+                    <td><img src="{{ asset($graphTeacher->teacherImage) }}" alt="img" width="50px"></td>
                     <td>
-                    <a href="{{ url('view/student').$graphStudent->id }}" class="btn btn-primary"> view</a>
-                    <a href="{{ url('edit/student').$graphStudent->id }}" class="btn btn-warning"> Edit</a>
+                    <a href="{{ url('view/teacher').$graphTeacher->id }}" class="btn btn-primary"> view</a>
+                    <a href="{{ url('edit/teacher').$graphTeacher->id }}" class="btn btn-warning"> Edit</a>
                     <a href="" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Delete</a>
                     </td>
                 </tr>
@@ -75,7 +75,7 @@ Graphic Design
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="{{ url('delete/student').$graphStudent->id }}" class="btn btn-primary">Delete</a>
+          <a href="{{ url('delete/teacher').$graphTeacher->id }}" class="btn btn-primary">Delete</a>
         </div>
       </div>
     </div>

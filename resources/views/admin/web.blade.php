@@ -22,30 +22,30 @@ Web Department
             </tr>
           </thead>
           <tbody>
-           @foreach ($webStudents as $webStudent)
+           @foreach ($webTeachers as $webTeacher)
                 <tr>
-                    <td>{{ $webStudent->studentName }}</td>
-                    <td>{{ $webStudent->studentRegistration}}</td>
-                    <td>{{ $webStudent->studentPhone}}</td>
+                    <td>{{ $webTeacher->teacherName }}</td>
+                    <td>{{ $webTeacher->teacherRegistration}}</td>
+                    <td>{{ $webTeacher->teacherPhone}}</td>
                     <td>
-                        @if($webStudent->studentDepartment==1)
+                        @if($webTeacher->teacherDepartment==1)
                         <span>{{ 'Graphic Design' }}</span>
-                        @elseif($webStudent->studentDepartment==2)
+                        @elseif($webTeacher->teacherDepartment==2)
                         <span>{{ 'Animation' }}</span>
-                        @elseif($webStudent->studentDepartment==3)
+                        @elseif($webTeacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
-                        @elseif($webStudent->studentDepartment==4)
+                        @elseif($webTeacher->teacherDepartment==4)
                         <span>{{ 'Android App' }}</span>
-                        @elseif($webStudent->studentDepartment==5)
+                        @elseif($webTeacher->teacherDepartment==5)
                         <span>{{ 'Basic IT Course' }}</span>
                         @else
                         <span>{{ 'Not Defined' }}</span>
                         @endif
                     </td>
-                    <td><img src="{{ asset($webStudent->studentImage) }}" alt="img" width="50px"></td>
+                    <td><img src="{{ asset($webTeacher->teacherImage) }}" alt="img" width="50px"></td>
                     <td>
-                    <a href="{{ url('view/student').$webStudent->id }}" class="btn btn-primary"> view</a>
-                    <a href="{{ url('edit/student').$webStudent->id }}" class="btn btn-warning"> Edit</a>
+                    <a href="{{ url('view/teacher').$webTeacher->id }}" class="btn btn-primary"> view</a>
+                    <a href="{{ url('edit/teacher').$webTeacher->id }}" class="btn btn-warning"> Edit</a>
                     <a href="" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Delete</a>
                     </td>
                 </tr>
@@ -73,7 +73,7 @@ Web Department
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="{{ url('delete/student').$webStudent->id }}" class="btn btn-primary">Delete</a>
+          <a href="{{ url('delete/teacher').$webTeacher->id }}" class="btn btn-primary">Delete</a>
         </div>
       </div>
     </div>

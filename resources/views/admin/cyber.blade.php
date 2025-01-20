@@ -22,32 +22,32 @@ Cyber Department
             </tr>
           </thead>
           <tbody>
-           @foreach ($cyberStudents as $cyberStudent)
+           @foreach ($cyberTeachers as $cyberTeacher)
                 <tr>
-                    <td>{{ $cyberStudent->studentName }}</td>
-                    <td>{{ $cyberStudent->studentRegistration}}</td>
-                    <td>{{ $cyberStudent->studentPhone}}</td>
+                    <td>{{ $cyberTeacher->teacherName }}</td>
+                    <td>{{ $cyberTeacher->teacherRegistration}}</td>
+                    <td>{{ $cyberTeacher->teacherPhone}}</td>
                     <td>
-                        @if($cyberStudent->studentDepartment==1)
+                        @if($cyberTeacher->teacherDepartment==1)
                         <span>{{ 'Graphic Design' }}</span>
-                        @elseif($cyberStudent->studentDepartment==2)
+                        @elseif($cyberTeacher->teacherDepartment==2)
                         <span>{{ 'Animation' }}</span>
-                        @elseif($cyberStudent->studentDepartment==3)
+                        @elseif($cyberTeacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
-                        @elseif($cyberStudent->studentDepartment==4)
+                        @elseif($cyberTeacher->teacherDepartment==4)
                         <span>{{ 'Android App' }}</span>
-                        @elseif($cyberStudent->studentDepartment==5)
+                        @elseif($cyberTeacher->teacherDepartment==5)
                         <span>{{ 'Basic Course' }}</span>
-                        @elseif($cyberStudent->studentDepartment==6)
+                        @elseif($cyberTeacher->teacherDepartment==6)
                         <span>{{ 'Cyber Security' }}</span>
                         @else
                         <span>{{ 'Not Defined' }}</span>
                         @endif
                     </td>
-                    <td><img src="{{ asset($cyberStudent->studentImage) }}" alt="img" width="50px"></td>
+                    <td><img src="{{ asset($cyberTeacher->teacherImage) }}" alt="img" width="50px"></td>
                     <td>
-                    <a href="{{ url('view/student').$cyberStudent->id }}" class="btn btn-primary"> view</a>
-                    <a href="{{ url('edit/student').$cyberStudent->id }}" class="btn btn-warning"> Edit</a>
+                    <a href="{{ url('view/teacher').$cyberTeacher->id }}" class="btn btn-primary"> view</a>
+                    <a href="{{ url('edit/teacher').$cyberTeacher->id }}" class="btn btn-warning"> Edit</a>
                     <a href="" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Delete</a>
                     </td>
                 </tr>
@@ -75,7 +75,7 @@ Cyber Department
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="{{ url('delete/student').$cyberStudent->id }}" class="btn btn-primary">Delete</a>
+          <a href="{{ url('delete/teacher').$cyberTeacher->id }}" class="btn btn-primary">Delete</a>
         </div>
       </div>
     </div>

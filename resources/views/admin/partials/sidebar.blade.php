@@ -60,12 +60,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">All Courses</h6>
                 <a class="collapse-item" href="{{ route('allCourse') }}">Course Info</a>
-                <a class="collapse-item" href="{{ route('graph') }}">Graphic Design</a>
-                <a class="collapse-item" href="{{ route('anime') }}">Animation</a>
-                <a class="collapse-item" href="{{ route('web') }}">Web Development</a>
-                <a class="collapse-item" href="{{ route('app') }}">Android App</a>
-                <a class="collapse-item" href="{{ route('basic') }}">Basic Course</a>
-                <a class="collapse-item" href="{{ route('cyber') }}">Cyber Security</a>
             </div>
         </div>
     </li>
@@ -77,12 +71,12 @@
         Addons
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-           aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+           aria-expanded="true" aria-controls="collapseThree">
            <i class="fa fa-users mr-2"></i>
             <span>Student Info</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Students</h6>
@@ -93,17 +87,34 @@
     </li>
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-           aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+           aria-expanded="true" aria-controls="collapseFour">
            <i class="bi bi-people-fill"></i>
             <span>Trainers Info</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Trainers</h6>
                 <a class="collapse-item" href="{{ route('allTeacher') }}">All Trainers</a>
                 <a class="collapse-item" href="{{ route('addTeacher') }}">Add Trainer</a>
+
+            <!-- Nested Course Based Section -->
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
+               aria-expanded="false" aria-controls="collapseFive">
+                <span class="text-info">Course Based</span>
+            </a>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#collapseFour">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{ route('graph') }}">Graphic Design</a>
+                    <a class="collapse-item" href="{{ route('anime') }}">Animation</a>
+                    <a class="collapse-item" href="{{ route('web') }}">Web Development</a>
+                    <a class="collapse-item" href="{{ route('app') }}">Android App</a>
+                    <a class="collapse-item" href="{{ route('basic') }}">Basic Course</a>
+                    <a class="collapse-item" href="{{ route('cyber') }}">Cyber Security</a>
+                </div>
+            </div>
+
             </div>
         </div>
     </li>
@@ -122,4 +133,14 @@
 
 
 </ul>
-<!-- End of Sidebar --><?php
+<!-- End of Sidebar -->
+
+
+
+
+<?php
+
+
+
+
+

@@ -25,7 +25,7 @@ View Trainer
                 </tr>
                 <tr>
                     <th>Registation</th>
-                    <td>{{ $viewTeacher->teacherRegistation }}</td>
+                    <td>{{ $viewTeacher->teacherRegistration }}</td>
                 </tr>
                 <tr>
                     <th>Phone</th>
@@ -49,7 +49,7 @@ View Trainer
                         @elseif($viewTeacher->teacherDepartment==3)
                         <span>{{ 'Web Development' }}</span>
                         @elseif($viewTeacher->teacherDepartment==4)
-                        <span>{{ 'Android App' }}</span>
+                        <span>{{ 'Digital Marketing' }}</span>
                         @elseif($viewTeacher->teacherDepartment==5)
                         <span>{{ 'Basic Course' }}</span>
                         @elseif($viewTeacher->teacherDepartment==6)
