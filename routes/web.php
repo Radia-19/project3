@@ -86,6 +86,9 @@ Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStu
 Route::get('/admin/payment',[PaymentController::class,'show'])->name('admin.payment.show');
 Route::post('/payment',[PaymentController::class, 'payment'])->name('payment');
 
+// ALL COURSES
+Route::get('/admin/allCourse',[CourseController::class,'allCourse'])->name('allCourse');
+
 // All Department....
 Route::get('/graph/department',[DepartmentController::class,'graph'])->name('graph');
 Route::get('/anime/department',[DepartmentController::class,'anime'])->name('anime');

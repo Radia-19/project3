@@ -14,7 +14,7 @@ Andriod Department
           <thead>
             <tr>
                 <th>Name</th>
-                <th>Registation</th>
+                <th>Registration</th>
                 <th>Phone</th>
                 <th>Department</th>
                 <th>Image</th>
@@ -25,7 +25,7 @@ Andriod Department
            @foreach ($appStudents as $appStudent)
                 <tr>
                     <td>{{ $appStudent->studentName }}</td>
-                    <td>{{ $appStudent->studentRegistation}}</td>
+                    <td>{{ $appStudent->studentRegistration}}</td>
                     <td>{{ $appStudent->studentPhone}}</td>
                     <td>
                         @if($appStudent->studentDepartment==1)

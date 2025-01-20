@@ -20,7 +20,7 @@ class FileController extends Controller
         $validated = $request->validate([
             'name'=> 'required|unique:books,name',
             'details'=> 'required',
-            'book' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,jpeg,png|max:15360',
+            'book' => 'required|file|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx|max:15360',
         ]);
         //$validator->validate();
 

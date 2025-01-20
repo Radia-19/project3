@@ -12,7 +12,7 @@ Add Student
     </div>
   @endif
 
-    <h2 class="page-title">Enroll New Student Here</h2>
+    <h2 class="page-title mb-2">Enroll New Student Here!</h2>
     <div class="row mb-2">
       <div class="col-lg-12">
         <div class="card">
@@ -27,11 +27,11 @@ Add Student
                 <input type="text" class="form-control" name="studentName" placeholder=" Name "/>
               </div>
               <div class="form-group mt-2">
-                <label>Registation No: </label>
-                @error('studentRegistation')
+                <label>Registration No: </label>
+                @error('studentRegistration')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
-                <input type="text" class="form-control" name="studentRegistation" placeholder=" Registation "/>
+                <input type="text" class="form-control" name="studentRegistration" placeholder=" Registration "/>
               </div>
               <div class="form-group mt-2">
                 <label>Father's Name: </label>
@@ -90,7 +90,7 @@ Add Student
                 </select>
              </div> --}}
 
-              <div class="text-center">
+              <div class="text-center mt-2">
                <input type="submit" class=" btn btn-primary enter-btn m-3" value="Enroll Student" name="studentSubmit"/>
             </div>
             </form>

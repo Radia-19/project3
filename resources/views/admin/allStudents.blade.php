@@ -15,7 +15,7 @@ All Student
           <thead>
             <tr>
                 <th>Name</th>
-                <th>Registation</th>
+                <th>Registration</th>
                 {{-- <th>Phone</th> --}}
                 <th>Course</th>
                 <th>Image</th>
@@ -28,7 +28,7 @@ All Student
            @forelse ($allStudents as $student)
                 <tr>
                     <td>{{ $student->studentName }}</td>
-                    <td>{{ $student->studentRegistation}}</td>
+                    <td>{{ $student->studentRegistration}}</td>
                     <td>
                         <span>{{ $student->course_name ?? 'No Course Assigned' }}</span>
                     </td>

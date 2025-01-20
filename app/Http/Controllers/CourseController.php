@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Student;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -78,7 +79,7 @@ class CourseController extends Controller
 
     public function updateShow($id)
     {
-        $course = Course::findOrFail($id);//single object
+        $course = Course::findOrFail($id);
         return view('updateCourse',compact('course'));
     }
 
@@ -161,6 +162,14 @@ class CourseController extends Controller
         $course->delete();
 
         return redirect()->route('course')->with('success', 'Course deleted successfully');
+    }
+
+    public function allCourse()
+    {
+        $allStudents = Student::with('course')->paginate(10);
+
+        return view('admin.allCourse',compact('allStudents'));
+
     }
 
 

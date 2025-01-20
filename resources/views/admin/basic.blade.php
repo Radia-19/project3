@@ -14,7 +14,7 @@ Basic Department
           <thead>
             <tr>
                 <th>Name</th>
-                <th>Registation</th>
+                <th>Registration</th>
                 <th>Phone</th>
                 <th>Department</th>
                 <th>Image</th>
@@ -25,7 +25,7 @@ Basic Department
            @foreach ($basicStudents as $basicStudent)
                 <tr>
                     <td>{{ $basicStudent->studentName }}</td>
-                    <td>{{ $basicStudent->studentRegistation}}</td>
+                    <td>{{ $basicStudent->studentRegistration}}</td>
                     <td>{{ $basicStudent->studentPhone}}</td>
                     <td>
                         @if($basicStudent->studentDepartment==1)

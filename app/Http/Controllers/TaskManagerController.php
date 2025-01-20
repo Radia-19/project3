@@ -37,7 +37,7 @@ class TaskManagerController extends Controller
     }
     public function show($id)
     {
-        $task = Task::findOrFail($id);//single object
+        $task = Task::findOrFail($id);
         return view('updateTask',compact('task'));
     }
 

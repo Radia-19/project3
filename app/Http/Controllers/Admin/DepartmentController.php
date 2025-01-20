@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class DepartmentController extends Controller
 {
+
     public function graph(){
         $graphStudents=DB::table('students')->where(['studentDepartment'=>1])->get();
         return view('admin.graph',compact('graphStudents'));

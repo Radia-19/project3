@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('studentName');
-            $table->string('studentRegistation');
+            $table->string('studentRegistration');
             $table->string('studentFatherName');
             $table->string('studentMotherName');
             $table->string('studentPhone');
@@ -26,7 +26,7 @@ return new class extends Migration
             //$table->string('payment_method');
             $table->unsignedInteger('batch')->default(1);
             $table->unsignedBigInteger( 'approve_by')->nullable();
-            $table->enum( 'status',['pending','approved','declined'])->default('pending');
+            $table->enum( 'status',['pending','approved'])->default('pending');
             $table->dateTime( 'approve_date')->nullable();
             $table->timestamps();
 

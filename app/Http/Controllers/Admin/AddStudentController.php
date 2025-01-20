@@ -27,56 +27,69 @@ class AddStudentController extends Controller
         //dd($request->all());
         $validatedData = $request->validate([
             'studentName' => 'required',
-            'studentRegistation' => 'required|unique:students|max:6|min:6',
+            'studentRegistration' => 'required|unique:students|max:6|min:6',
             'studentFatherName' => 'required',
             'studentMotherName' => 'required',
             'studentPhone' => 'required',
             'studentAddress' => 'required',
-            'studentImage' => 'required|mimes:jpeg,jpg,png,PNG',
+            'studentImage' => 'nullable|mimes:jpeg,jpg,png,PNG',
             'course_id' => 'required|exists:courses,id',
             //'course_name' => 'required|exists:courses,name',
             //'course_fee' => 'required|exists:courses,fee',
             //'payment_method' => 'required|exists:payments,payment_method',
-            'status' => 'required'
+            //'status' => 'required'
         ]);
         //dd($validatedData);
 
-        $data = $validatedData;
+        //$data = $validatedData;
 
-        //dd($request->all());
+        $course = Course::find($validatedData['course_id']);
+        $validatedData['course_name'] = $course->name ?? null;
+        $validatedData['course_fee'] = $course->fee ?? null;
 
-        // $course = Course::find($data['course_id']);
-        // $data['course_name'] = $course->name ?? null;
-        // $data['course_fee'] = $course->fee ?? null;
 
         $currentBatch = Student::max('batch') ?? 1;
-        $studentsInCurrentBatch = Student::where('batch', $currentBatch)->count();
+        $studentsInCurrentBatch = Student::where('batch', $currentBatch)
+                                ->where('status', 'approved')
+                                ->count();
 
         if ($studentsInCurrentBatch >= 10) {
 
-            $data['batch'] = $currentBatch + 1;
-            $data['status'] = 'pending';
+            $validatedData['batch'] = $currentBatch + 1;
+            $validatedData['status'] = 'pending';
             $message = 'The batch is full. You have been moved to the next batch and marked as pending.';
         } else {
 
-            $data['batch'] = $currentBatch;
-            $data['status'] = 'approved';
+            $validatedData['batch'] = $currentBatch;
+            $validatedData['status'] = 'approved';
             $message = 'You have been added to the current batch and approved.';
         }
 
         if ($request->hasFile('studentImage')) {
             $image = $request->file('studentImage');
-            $imageName = hexdec(uniqid()) . '.' . strtolower($image->getClientOriginalExtension());
-            $imagePath = 'upload_image/' . $imageName;
-            $image->move('upload_image', $imageName);
-            $data['studentImage'] = $imagePath;
+            $imageName = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension(); // Unique file name
+            $imagePath = 'upload/' . $imageName;
+            $image->move(public_path('upload'), $imageName);
+            $validatedData['studentImage'] = $imagePath;
+        } else {
+            $validatedData['studentImage'] = null;
         }
 
-        //dd($data);
-        Student::create($data);
-        //Log::info('Student created successfully', $data);
-        //dd('Data inserted');
-        //dd($data);
+        Student::create([
+            'studentName' => $request->studentName,
+            'studentRegistration' => $request->studentRegistration,
+            'studentFatherName' => $request->studentFatherName,
+            'studentMotherName' => $request->studentMotherName,
+            'studentPhone' => $request->studentPhone,
+            'studentAddress' => $request->studentAddress,
+            'studentImage' => $imagePath,
+            'course_id' => $request->course_id,
+            'course_name' => $validatedData['course_name'],
+            'course_fee' => $validatedData['course_fee'],
+            'batch' => $validatedData['batch'],
+            'status' => $validatedData['status'],
+        ]);
+
 
         return redirect()->back()->with('message', $message);
     }
@@ -114,17 +127,17 @@ class AddStudentController extends Controller
     {
         $validatedData = $request->validate([
             'studentName' => 'required',
-            'studentRegistation' => 'required|max:6|min:6',
+            'studentRegistration' => 'required|max:6|min:6',
             'studentFatherName' => 'required',
             'studentMotherName' => 'required',
             'studentPhone' => 'required',
             'studentAddress' => 'required',
             'studentImage' => 'nullable|mimes:jpeg,jpg,png,PNG',
             'course_id' => 'required|exists:courses,id',
-            'course_name' => 'required|exists:course,name',
-            'course_fee' => 'required|exists:course,fee',
+            //'course_name' => 'required|exists:course,name',
+            //'course_fee' => 'required|exists:course,fee',
             //'payment_method' => 'required|exists:payments,payment_method',
-            'status' => 'required'
+            //'status' => 'required'
         ]);
 
         $student = Student::findOrFail($id);
@@ -167,7 +180,7 @@ class AddStudentController extends Controller
     {
         $student = Student::findOrFail($studentId);
 
-        if (in_array($status, ['approved', 'declined'])) {
+        if (in_array($status, ['approved'])) {
             $student->update([
                 'status' => $status,
                 'approve_by' => $status === 'approved' ? Auth::id() : null,
@@ -193,8 +206,38 @@ class AddStudentController extends Controller
 
 
 
+// if ($request->hasFile('studentImage')) {
+        //     $image = $request->file('studentImage');
+        //     $imageName = hexdec(uniqid()) . '.' . strtolower($image->getClientOriginalExtension());
+        //     $imagePath = 'upload_image/' . $imageName;
+        //     $image->move('upload_image', $imageName);
+        //     $data['studentImage'] = $imagePath;
+        // }
+        // if ($request->hasFile('studentImage')) {
+        //     $imagePath = $request->file('studentImage')->store('upload', 'public');
+        //     $validatedData['studentImage'] = $imagePath;
+        // }
 
+        //dd('Before Insertion');
+ //dd('After Insertion');
+        // Student::create($data);
+        // Log::info('student added successfully');
+        // dd('data inserted');
+        //dd($data);
 
+        // $student = Student::create([
+        //     'name' => $request->studentName,
+        //     'registration_number' => $request->studentRegistration,
+        //     'father_name' => $request->studentFatherName,
+        //     'mother_name' => $request->studentMotherName,
+        //     'phone' => $request->studentPhone,
+        //     'address' => $request->studentAddress,
+        //     'course_id' => $request->course_id,
+        //     'image_path' => $imagePath ?? null,
+        // ]);
+        //Log::info('Student created successfully', $student);
+        //dd('Data inserted');
+        //dd($data);
 
 
 // public function approveShow()

@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('student_id');
-            $table->string('payment_method'); // e.g., card, cash, PayPal
-            $table->string('status')->default('pending'); // e.g., pending, completed
-            $table->string('transaction_id')->nullable(); // For tracking payments
-            $table->decimal('amount', 10, 2);
+            $table->string('payment_method'); //bank, card, cash, bkash
+            $table->enum('status',['pending','completed'])->default('pending'); // pending, completed
+            $table->decimal('fee', 8, 2);
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();
 

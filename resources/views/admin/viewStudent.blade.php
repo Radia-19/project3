@@ -44,8 +44,9 @@ View Student
                     <td>{{ $viewStudent->studentAddress }}</td>
                 </tr>
                 <tr>
-                    <th>Department</th>
-                    <td>
+                    <th>Course</th>
+                    <td>{{ $viewStudent->course->name }}</td>
+                    {{-- <td>
                         @if($viewStudent->studentDepartment==1)
                         <span>{{ 'Graphic Design' }}</span>
                         @elseif($viewStudent->studentDepartment==2)
@@ -61,7 +62,7 @@ View Student
                         @else
                         <span>{{ 'Not Defined' }}</span>
                         @endif
-                    </td>
+                    </td> --}}
                 </tr>
              </tbody>
         </table>

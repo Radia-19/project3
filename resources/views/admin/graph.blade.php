@@ -14,7 +14,7 @@ Graphic Design
           <thead>
             <tr>
                 <th>Name</th>
-                <th>Registation</th>
+                <th>Registration</th>
                 <th>Phone</th>
                 <th>Department</th>
                 <th>Image</th>
@@ -25,7 +25,7 @@ Graphic Design
            @foreach ($graphStudents as $graphStudent)
                 <tr>
                     <td>{{ $graphStudent->studentName }}</td>
-                    <td>{{ $graphStudent->studentRegistation}}</td>
+                    <td>{{ $graphStudent->studentRegistration}}</td>
                     <td>{{ $graphStudent->studentPhone}}</td>
                     <td>
                         @if($graphStudent->studentDepartment==1)

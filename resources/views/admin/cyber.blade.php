@@ -14,7 +14,7 @@ Cyber Department
           <thead>
             <tr>
                 <th>Name</th>
-                <th>Registation</th>
+                <th>Registration</th>
                 <th>Phone</th>
                 <th>Department</th>
                 <th>Image</th>
@@ -25,7 +25,7 @@ Cyber Department
            @foreach ($cyberStudents as $cyberStudent)
                 <tr>
                     <td>{{ $cyberStudent->studentName }}</td>
-                    <td>{{ $cyberStudent->studentRegistation}}</td>
+                    <td>{{ $cyberStudent->studentRegistration}}</td>
                     <td>{{ $cyberStudent->studentPhone}}</td>
                     <td>
                         @if($cyberStudent->studentDepartment==1)
