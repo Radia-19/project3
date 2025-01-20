@@ -25,9 +25,9 @@ class Student extends Model
     //                 ->withPivot('batch', 'created_at');
     // }
 
-    // public function payment()
-    // {
-    //     return $this->hasOne(Payment::class); // Assuming one student has one payment
-    // }
+    public function payment()
+    {
+        return $this->hasOne(Payment::class); // Assuming one student has one payment
+    }
 
 }

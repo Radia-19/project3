@@ -28,7 +28,7 @@
                     <h1 class="mb-4">{{ $course->name }}</h1>
                     <p class="mb-4">{{ $course->details }}</p>
                     <hr>
-                    <p class="mb-4">আমাদের ওয়েব ডিজাইন কোর্সের মাধ্যমে আপনার লক্ষ্য অর্জন করুন এবং নিজেকে শক্তিশালী করুন</p>
+                    <p class="mb-4">আমাদের কোর্সসমূহের মাধ্যমে আপনার লক্ষ্য অর্জন করুন এবং নিজেকে শক্তিশালী করুন</p>
                     <p class="mb-4">আমরা প্রতিভাবান প্রশিক্ষকদের সাথে সেরা মডিউল অফার করি</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
@@ -50,14 +50,14 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>প্রফেশনাল সার্টিফিকেট</p>
                         </div>
                     </div>
-
+                    @if(Auth::check() && Auth::user()->role === 'user')
                     <p class="text-success text-end me-3">{{ $course->fee }} টাকা</p>
                     <hr>
-
                     <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('addStudent') }}" id="actionButton">এখনই ভর্তি হোন</a>
+                    @endif
                 </div>
                 <div>
-                    <h6 class="section-title bg-white text-start text-primary pe-3">ওয়েব ডিজাইন কি? কিভাবে শিখবেন এবং কত দিন সময় লাগবে?</h6>
+                    <h6 class="section-title bg-white text-start text-primary pe-3">কোর্সসমূহের বিস্তারিত । কিভাবে শিখবেন ? কতগুলো ক্লাস এবং কত দিন সময় লাগবে?</h6>
                     <div class="row">
                         <div class="col-sm-4 mb-3 mb-sm-0">
                           <div class="card">

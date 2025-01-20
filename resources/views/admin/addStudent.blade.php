@@ -62,7 +62,7 @@ Add Student
                 <input type="text" class="form-control" name="studentAddress" placeholder=" Address "/>
               </div>
 
-              <div class="form-group">
+              <div class="form-group mt-2">
                 <label for="course_id">Select Course</label>
                 @error('course_id')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
@@ -74,7 +74,6 @@ Add Student
                     @endforeach
                 </select>
               </div>
-
               <div class="form-group mt-2">
                 <label>Image: </label>
                 @error('studentImage')
@@ -82,15 +81,14 @@ Add Student
                 @enderror
                 <input type="file" class="form-control" name="studentImage" placeholder=" Image "/>
               </div>
-              <div class="form-group mt-2">
+              {{-- <div class="form-group mt-2">
                 <label for="payment_method">Payment Method</label>
                 <select name="payment_method" id="payment_method" class="form-control" required>
-                    <option value="card">Credit/Debit Card</option>
-                    <option value="bank">Bank Transfer</option>
-                    <option value="cash">Cash</option>
-                    <option value="paypal">Bkash/Nagad/Rocket</option>
+                    @foreach($payments as $payment)
+                        <option value="{{ $payment->payment_method }}">{{ $payment->payment_method }}</option>
+                    @endforeach
                 </select>
-            </div>
+             </div> --}}
 
               <div class="text-center">
                <input type="submit" class=" btn btn-primary enter-btn m-3" value="Enroll Student" name="studentSubmit"/>
@@ -118,3 +116,8 @@ Add Student
                     <option value="paypal" {{ old('payment_method') == 'paypal' ? 'selected' : '' }}>Bkash/Nagad/Rocket</option>
                 </select>
               </div> --}}
+
+{{-- <option value="card">Credit/Debit Card</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="cash">Cash</option>
+                    <option value="mobile">Bkash/Nagad/Rocket</option> --}}

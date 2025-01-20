@@ -6,6 +6,7 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\TaskManagerController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AddStudentController;
@@ -73,8 +74,6 @@ Route::prefix('admin')->group(function () {
 // Add Student....
 Route::get('/add/student',[AddStudentController::class,'addStudent'])->name('addStudent');
 Route::POST('/store/student',[AddStudentController::class,'storeStudent'])->name('storeStudent');
-Route::get('/admin/payment',[AddStudentController::class,'paymentShow'])->name('admin.payment.show');
-Route::post('/payment',[AddStudentController::class, 'payment'])->name('payment');
 Route::get('/all/student',[AddStudentController::class,'allStudents'])->name('allStudents');
 Route::get('/view/student{id}',[AddStudentController::class,'viewStudent'])->name('viewStudent');
 Route::get('/edit/student{id}',[AddStudentController::class,'editStudent'])->name('editStudent');
@@ -84,6 +83,8 @@ Route::get('/admin/approved',[AddStudentController::class,'approvedShow'])->name
 Route::get('/admin/approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
 Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
 
+Route::get('/admin/payment',[PaymentController::class,'show'])->name('admin.payment.show');
+Route::post('/payment',[PaymentController::class, 'payment'])->name('payment');
 
 // All Department....
 Route::get('/graph/department',[DepartmentController::class,'graph'])->name('graph');

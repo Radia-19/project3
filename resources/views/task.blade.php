@@ -18,7 +18,7 @@
                     <div class="card-header">
                      Task ID: {{ $task->id }}
                      <div class="float-end">
-                        @if(Auth::user()->role === 'trainer')
+                        @if(Auth::check() && Auth::user()->role === 'trainer')
                             @if($task->status == 'pending')
                                 <a class="btn btn-info btn-sm me-2" href="{{ route('task.updateStatus',[$task->id,'completed']) }}">Mark as complete</a>
                             @else

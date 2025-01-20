@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('studentAddress');
             $table->text('studentImage');
             $table->unsignedBigInteger('course_id')->nullable();
+            $table->string('course_name');
+            $table->decimal('course_fee', 8, 2);
+            //$table->string('payment_method');
             $table->unsignedInteger('batch')->default(1);
             $table->unsignedBigInteger( 'approve_by')->nullable();
             $table->enum( 'status',['pending','approved','declined'])->default('pending');
