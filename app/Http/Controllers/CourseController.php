@@ -40,7 +40,7 @@ class CourseController extends Controller
             $video = $request->file('video');
             $videoName = hexdec(uniqid()) . '.' . strtolower($video->getClientOriginalExtension());
             $videoPath = 'upload/videos/' . $videoName;
-            $video->move(public_path('upload/videos'), $videoName); 
+            $video->move(public_path('upload/videos'), $videoName);
         }
         //dd($videoPath);
 
@@ -87,6 +87,7 @@ class CourseController extends Controller
     {
         // Validation
         $validator = Validator::make($request->all(), [
+            'user_id' => Auth::id(),
             'name' => 'required|min:5',
             'details'=> 'required',
             'image'=> 'nullable|image|mimes:jpg,jpeg,png|max:5120',
@@ -99,7 +100,6 @@ class CourseController extends Controller
         ]);
         $validator->validate();
 
-        // Find the course by ID
         $course = Course::findOrFail($id);
 
         // Initialize paths
@@ -134,6 +134,7 @@ class CourseController extends Controller
 
         // Update the course details
         $course->update([
+            'user_id' => Auth::id(),
             'name' => $request->input('name'),
             'details' => $request->input('details'),
             'image' => $imagePath,
@@ -166,9 +167,13 @@ class CourseController extends Controller
 
     public function allCourse()
     {
-        $allStudents = Student::with('course')->paginate(10);
+        // $allStudents = Student::with('course')->paginate(10);
 
-        return view('admin.allCourse',compact('allStudents'));
+        // return view('admin.allCourse',compact('allStudents'));
+        //$courses = Course::all()->paginate(10);
+        $courses = Course::paginate(10);
+
+        return view('admin.allCourse',compact('courses'));
 
     }
 
