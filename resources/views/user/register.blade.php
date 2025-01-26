@@ -27,7 +27,7 @@
                     <lable for="">Confirm Password:</lable>
                     <input type="password" class="form-control mb-2" name="password_confirmation">
                     <div class="text-center">
-                    <input type="submit" name="submit" value="register" class="mt-2 mb-2 btn btn-info w-100">
+                    <input type="submit" name="submit" value="register" class="mt-2 mb-2 btn btn-info text-white w-100">
                     </div>
                     <div class="text-center">
                         <p>Already Have An Account? <a class="text-info" href="{{ url('/login') }}">Login Here</a></p>

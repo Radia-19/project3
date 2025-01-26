@@ -29,7 +29,9 @@
                                                     <div class="card-body">
                                                       <h5 class="card-title text-black">{{ $course->name }}</h5>
                                                       <p class="card-text text-secondary mb-2">{{ $course->details }}</p>
+                                                      @if(Auth::check() && Auth::user()->role === 'user')
                                                       <p class="text-success text-end me-3">{{ $course->fee }} টাকা</p>
+                                                      @endif
                                                       <p class="text-black-50 text-center">বিস্তারিত <i class="bi bi-arrow-right"></i></p>
 
                                                     </div>

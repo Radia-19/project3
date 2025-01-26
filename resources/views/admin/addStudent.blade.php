@@ -6,15 +6,14 @@ Add Student
 
 @section('content')
 <div class="container m-5">
-  @if(session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-  @endif
-
     <h2 class="page-title text-center text-info mb-2"><i class="bi bi-backpack-fill"></i> Enroll New Student Here!</h2>
     <div class="row mb-2">
       <div class="col-lg-8 offset-2">
+        @if(session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
         <div class="card" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
           <div class="card-body">
             <form class="forms-sample" method="POST" action="{{ route('storeStudent') }}" enctype="multipart/form-data">

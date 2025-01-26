@@ -79,9 +79,9 @@ Route::get('/view/student{id}',[AddStudentController::class,'viewStudent'])->nam
 Route::get('/edit/student{id}',[AddStudentController::class,'editStudent'])->name('editStudent');
 Route::POST('/update/student{id}',[AddStudentController::class,'updateStudent'])->name('updateStudent');
 Route::get('/delete/student{id}',[AddStudentController::class,'deleteStudent'])->name('deleteStudent');
-Route::get('/admin/approved',[AddStudentController::class,'approvedShow'])->name('admin.approved.show');
-Route::get('/admin/approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
-Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
+// Route::get('/admin/approved',[AddStudentController::class,'approvedShow'])->name('admin.approved.show');
+// Route::get('/admin/approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
+//Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
 
 Route::get('/admin/payment',[PaymentController::class,'show'])->name('admin.payment.show');
 Route::post('/payment',[PaymentController::class, 'payment'])->name('payment');

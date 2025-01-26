@@ -11,6 +11,7 @@ All Student
   <div class="card-body">
     <div class="row">
       <div class="col-12">
+        {{ $allStudents->links() }}
         <table id="order-listing" class="table table-striped"  style="width:100%;">
           <thead>
             <tr>
@@ -51,7 +52,7 @@ All Student
            @endforelse
           </tbody>
         </table>
-        {{ $allStudents->links() }}
+
       </div>
     </div>
   </div>

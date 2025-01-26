@@ -40,7 +40,7 @@ class CourseController extends Controller
             $video = $request->file('video');
             $videoName = hexdec(uniqid()) . '.' . strtolower($video->getClientOriginalExtension());
             $videoPath = 'upload/videos/' . $videoName;
-            $video->move(public_path('upload/videos'), $videoName); // Storing video in upload/videos directory
+            $video->move(public_path('upload/videos'), $videoName); 
         }
         //dd($videoPath);
 
@@ -60,11 +60,11 @@ class CourseController extends Controller
               'image' => $imagePath,
               'video' => $videoPath,
               'batch_start' => $request->input('batch_start'),
-             'admission_end' => $request->input('admission_end'),
-             'live_class_time' => $request->input('live_class_time'),
-             'live_classes' => $request->input('live_classes'),
-             'projects' => $request->input('projects'),
-             'fee' => $request->input('fee'),
+              'admission_end' => $request->input('admission_end'),
+              'live_class_time' => $request->input('live_class_time'),
+              'live_classes' => $request->input('live_classes'),
+              'projects' => $request->input('projects'),
+              'fee' => $request->input('fee'),
            ]);
         });
         return to_route('course')->with('success', 'Course added successfully');

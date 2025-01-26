@@ -13,10 +13,10 @@ All Courses
         <table id="order-listing" class="table table-striped"  style="width:100%;">
           <thead>
             <tr>
+                <th>Course</th>
                 <th>Name</th>
                 <th>Registration</th>
                 <th>Phone</th>
-                <th>Course</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -24,10 +24,10 @@ All Courses
           <tbody>
            @foreach ($allStudents as $student)
                 <tr>
+                    <td>{{ $student->course->name }}</td>
                     <td>{{ $student->studentName }}</td>
                     <td>{{ $student->studentRegistration }}</td>
                     <td>{{ $student->studentPhone }}</td>
-                    <td>{{ $student->course->name }}</td>
                     <td><img src="{{ asset($student->studentImage) }}" alt="img" width="50px"></td>
                     <td>
                     <a href="{{ url('view/student').$student->id }}" class="btn btn-primary"> view</a>

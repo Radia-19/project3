@@ -21,7 +21,7 @@
                             $student=DB::table('students')->count();
                           @endphp
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                All Student's
+                                All Students
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">({{ $student }})</div>
                         </div>
@@ -43,7 +43,7 @@
                                 $teacher=DB::table('teachers')->count();
                             @endphp
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                All Trainer's </div>
+                                All Trainers </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">({{ $teacher }})</div>
                         </div>
                         <div class="col-auto">
@@ -86,9 +86,13 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
+                        @php
+                            $course=DB::table('courses')->count();
+                        @endphp
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Registration fee </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">( 2500 tk)</div>
+                                Total Course
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">({{ $course }})</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -104,9 +108,12 @@
         <div class="col-6 stock-price grid-margin d-flex align-items-stretch mb-4">
          <div class="card w-100">
           <div class="card-body">
-            <h2 class="card-title">Total fee</h2>
+            {{-- @php
+                $totalFee = DB::table('courses')->sum('fee');
+             @endphp --}}
+            <h2 class="card-title">Total Fee</h2>
             <div class="amount-column-wrapper wrapper">
-              <p class="total-performance">BDT {{ $student * 2500 }} </p>
+              <p class="total-performance">BDT {{ $totalFee }} </p>
             </div>
             </div>
           </div>
@@ -133,7 +140,7 @@
            </div>
     </div>
 
-    <!-- Content Row -->
+    {{-- <!-- Content Row -->
     <div class="row">
 
         <!-- Area Chart -->
@@ -208,7 +215,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 @endsection

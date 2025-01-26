@@ -49,10 +49,8 @@ class AddStudentController extends Controller
 
 
         $currentBatch = Student::max('batch') ?? 1;
-        $studentsInCurrentBatch = Student::where('batch', $currentBatch)
-                                ->where('status', 'approved')
-                                ->count();
-
+        $studentsInCurrentBatch = Student::where('batch', $currentBatch)->count();
+//->where('status', 'approved')
         if ($studentsInCurrentBatch >= 10) {
 
             $validatedData['batch'] = $currentBatch + 1;
@@ -87,19 +85,19 @@ class AddStudentController extends Controller
             'course_name' => $validatedData['course_name'],
             'course_fee' => $validatedData['course_fee'],
             'batch' => $validatedData['batch'],
-            'status' => $validatedData['status'],
+           // 'status' => $validatedData['status'],
         ]);
 
 
         return redirect()->back()->with('message', $message);
     }
 
-    public function approveShow()
-    {
-        $students = Student::where('status', 'pending')->get();
+    // public function approveShow()
+    // {
+    //     $students = Student::where('status', 'pending')->get();
 
-        return view('admin.approvedShow', compact('students'));
-    }
+    //     return view('admin.approvedShow', compact('students'));
+    // }
 
 
     public function allStudents()
@@ -176,22 +174,22 @@ class AddStudentController extends Controller
         return redirect()->back()->with('message', 'Student successfully deleted!');
     }
 
-    public function studentApproveStatusUpdate($studentId, $status)
-    {
-        $student = Student::findOrFail($studentId);
+    // public function studentApproveStatusUpdate($studentId, $status)
+    // {
+    //     $student = Student::findOrFail($studentId);
 
-        if (in_array($status, ['approved'])) {
-            $student->update([
-                'status' => $status,
-                'approve_by' => $status === 'approved' ? Auth::id() : null,
-                'approve_date' => $status === 'approved' ? now() : null,
-            ]);
+    //     if (in_array($status, ['approved'])) {
+    //         $student->update([
+    //             'status' => $status,
+    //             'approve_by' => $status === 'approved' ? Auth::id() : null,
+    //             'approve_date' => $status === 'approved' ? now() : null,
+    //         ]);
 
-            return redirect()->back()->with('message', 'Student status updated successfully!');
-        }
+    //         return redirect()->back()->with('message', 'Student status updated successfully!');
+    //     }
 
-        return redirect()->back()->with('error', 'Invalid status provided.');
-    }
+    //     return redirect()->back()->with('error', 'Invalid status provided.');
+    // }
 
 
 }
