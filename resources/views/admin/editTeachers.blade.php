@@ -21,11 +21,11 @@ Edit Student
                 <input type="text" class="form-control" name="teacherName" value="{{ $editTeacher->teacherName }}"/>
               </div>
               <div class="form-group">
-                <label>Teacher Registation No: *</label>
-                @error('teacherRegistation')
+                <label>Teacher Registration No: *</label>
+                @error('teacherRegistration')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
-                <input type="text" class="form-control" name="teacherRegistation" value="{{ $editTeacher->teacherRegistation }}"/>
+                <input type="text" class="form-control" name="teacherRegistration" value="{{ $editTeacher->teacherRegistration }}"/>
               </div>
               <div class="form-group">
                 <label>Teacher Phone No: *</label>

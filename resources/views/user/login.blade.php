@@ -9,11 +9,10 @@
 
 @section('content')
    <div class="container">
-
        <div class="row">
-           <div class="col-4 offset-4">
+           <div class="col-4 offset-4 border border-4 p-5 mt-5" style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;">
                @include('errors.error')
-               <div class="mt-5" style="text-align: center;">
+               <div class="mt-2" style="text-align: center;">
                 <img style="height: 70px;"  src="{{ asset('image/p3LogoMakr.png')}}"  alt="Example Image">
                </div>
                <h3 class="mt-3 mb-3 text-center">Login Here!</h3>

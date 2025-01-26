@@ -21,11 +21,11 @@ Edit Student
                 <input type="text" class="form-control" name="studentName" value="{{ $editStudent->studentName }}"/>
               </div>
               <div class="form-group">
-                <label>Student Registation No: *</label>
-                @error('studentRegistation')
+                <label>Student Registration No: *</label>
+                @error('studentRegistration')
                     <div class="mb-2 text-danger"><i>{{ $message }}</i></div>
                 @enderror
-                <input type="text" class="form-control" name="studentRegistation" value="{{ $editStudent->studentRegistation }}"/>
+                <input type="text" class="form-control" name="studentRegistration" value="{{ $editStudent->studentRegistration }}"/>
               </div>
               <div class="form-group">
                 <label>Student Father's Name: *</label>
@@ -98,8 +98,8 @@ Edit Student
     </div>
   </div>
 
-  <script>
+  {{-- <script>
     document.forms['editStudentForm'].elements['studentDepartment'].value = {{ $editStudent->studentDepartment }}
-  </script>
+  </script> --}}
 
 @endsection

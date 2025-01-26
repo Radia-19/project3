@@ -6,7 +6,7 @@
 
   <div class="container">
     <div class="row mt-3">
-        <div class="col-12">
+        <div class="col-8 offset-2 mt-3">
 
             @if(session('success'))
                 <p class="alert alert-success">{{ session('success') }}</p>
@@ -33,9 +33,9 @@
                         <h5 class="card-title">{{ $task->name }}</h5>
                         <p class="card-text">{{ $task->details }}</p>
                     </div>
-                </div>
-            @endforeach
 
+            @endforeach
+        </div>
             {{ $allTasks->links() }}
             @endif
         </div>

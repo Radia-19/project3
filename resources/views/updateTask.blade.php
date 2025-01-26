@@ -17,7 +17,7 @@
                           cols="30" rows="10" class="form-control">{{ $task->details }}</textarea>
                 <div class="row">
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-info w-100" name="submit" value="Create">Update</button>
+                        <button type="submit" class="btn btn-info text-white w-100" name="submit" value="Create">Update</button>
                     </div>
                 </div>
             </form>

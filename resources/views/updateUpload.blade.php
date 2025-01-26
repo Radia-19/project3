@@ -23,7 +23,7 @@
                 <input class="form-control" type="text" name="details" value="{{ $book->details }}">
                 <input class="form-control mt-4" type="file" name="book" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" value="{{ $book->name }}">
                 <div class="mt-3">
-                    <button class="btn btn-outline-info mt-2 mb-5 w-100" type="submit" value="Update" name="submit">Update</button>
+                    <button class="btn btn-outline-info text-white mt-2 mb-5 w-100" type="submit" value="Update" name="submit">Update</button>
                 </div>
              </form>
            </div>

@@ -6,7 +6,8 @@
 
 <div class="container">
     <div class="row mt-3">
-        <div class="col-12">
+        <h3 class="text-center text-secondary mt-3">Add Course Here!</h3>
+        <div class="col-8 offset-2">
             @include('errors.error')
             <form class="" action="{{ route('course.create') }}" method="POST" enctype="multipart/form-data">
                 @csrf

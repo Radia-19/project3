@@ -24,7 +24,7 @@
               <div class="col-12">
                 <div class="text-center m-3">
                     <img src="{{asset('admin/img/p3LogoMakr.png') }}" alt="BootstrapBrain Logo" width="90" height="80">
-                    <h3 class="mt-2">Admin Login</h3>
+                    <h3 class="text-secondary mt-2">Admin Login</h3>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn btn-info btn-lg" type="submit">Log In</button>
+                    <button class="btn btn-info text-white btn-lg" type="submit">Log In</button>
                   </div>
                 </div>
               </div>

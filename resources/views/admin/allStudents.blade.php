@@ -21,7 +21,7 @@ All Student
                 <th>Image</th>
                 <th>Batch</th>
                 <th>Actions</th>
-                <th>Status</th>
+                {{-- <th>Status</th> --}}
             </tr>
           </thead>
           <tbody>
@@ -37,16 +37,16 @@ All Student
                     <td>
                     <a href="{{ url('view/student').$student->id }}" class="btn btn-primary"> view</a>
                     <a href="{{ url('edit/student').$student->id }}" class="btn btn-warning"> Edit</a>
-                    <a href="{{ url('delete/student').$student->id }}" onclick="return confirm('Are You Sure to Delete This')" class="btn btn-danger"> Delete</a>
+                    <a href="{{ url('delete/student').$student->id }}" onclick="return confirm('Are you sure you want to delete this student?')" class="btn btn-danger"> Delete</a>
                     </td>
-                    <td>
+                    {{-- <td>
                     <a class="btn btn-outline-success" onclick="return confirm('Are you sure?')" href="{{ route('admin.approval.update',[$student->id,'approved']) }}">Approve</a>
                     <a class="btn btn-outline-danger" onclick="return confirm('Are you sure?')" href="{{ route('admin.approval.update',[$student->id,'declined']) }}">Decline</a>
-                    </td>
+                    </td> --}}
                 </tr>
                 @empty
                   <tr>
-                    <td class="text-center" colspan="7">No Data Found!</td>
+                    <td class="text-center" colspan="6">No Data Found!</td>
                   </tr>
            @endforelse
           </tbody>

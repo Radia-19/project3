@@ -49,7 +49,7 @@ All allTrainer
                     <td>
                     <a href="{{ url('view/teacher').$teacher->id }}" class="btn btn-primary"> view</a>
                     <a href="{{ url('edit/teacher').$teacher->id }}" class="btn btn-warning"> Edit</a>
-                    <a href="{{ url('delete/teacher').$teacher->id }}" onclick="return confirm('Are You Sure to Delete This')" class="btn btn-danger"> Delete</a>
+                    <a href="{{ url('delete/teacher').$teacher->id }}" onclick="return confirm('Are you sure you want to delete this trainer?')" class="btn btn-danger"> Delete</a>
                     </td>
                 </tr>
            @endforeach
