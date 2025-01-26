@@ -36,7 +36,7 @@ class AddStudentController extends Controller
             'course_id' => 'required|exists:courses,id',
             //'course_name' => 'required|exists:courses,name',
             //'course_fee' => 'required|exists:courses,fee',
-            //'payment_method' => 'required|exists:payments,payment_method',
+            'payment_method' => 'required',
             //'status' => 'required'
         ]);
         //dd($validatedData);
@@ -49,7 +49,7 @@ class AddStudentController extends Controller
 
 
         $currentBatch = Student::max('batch') ?? 1;
-        $studentsInCurrentBatch = Student::where('batch', $currentBatch)->count();
+        $studentsInCurrentBatch = Student::where('batch', $currentBatch)->where('status', 'approved')->count();
 //->where('status', 'approved')
         if ($studentsInCurrentBatch >= 10) {
 
@@ -84,8 +84,9 @@ class AddStudentController extends Controller
             'course_id' => $request->course_id,
             'course_name' => $validatedData['course_name'],
             'course_fee' => $validatedData['course_fee'],
+            'payment_method' => $request->payment_method,
             'batch' => $validatedData['batch'],
-           // 'status' => $validatedData['status'],
+            'status' => $validatedData['status'],
         ]);
 
 

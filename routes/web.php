@@ -83,8 +83,8 @@ Route::get('/delete/student{id}',[AddStudentController::class,'deleteStudent'])-
 // Route::get('/admin/approval/updatestatus/{studentId}/{status}',[AddStudentController::class,'studentApproveStatusUpdate'])->name('admin.approval.update');
 //Route::get('/admin/batch/{batchNumber}', [AddStudentController::class, 'batchStudents'])->name('batch.students');
 
-Route::get('/admin/payment',[PaymentController::class,'show'])->name('admin.payment.show');
-Route::post('/payment',[PaymentController::class, 'payment'])->name('payment');
+// Route::get('/admin/payment',[PaymentController::class,'show'])->name('admin.payment.show');
+// Route::post('/payment',[PaymentController::class, 'payment'])->name('payment');
 
 // ALL COURSES
 Route::get('/admin/allCourse',[CourseController::class,'allCourse'])->name('allCourse');

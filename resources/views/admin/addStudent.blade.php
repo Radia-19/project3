@@ -80,14 +80,15 @@ Add Student
                 @enderror
                 <input type="file" class="form-control" name="studentImage" placeholder=" Image "/>
               </div>
-              {{-- <div class="form-group mt-2">
+              <div class="form-group mt-2">
                 <label for="payment_method">Payment Method</label>
                 <select name="payment_method" id="payment_method" class="form-control" required>
-                    @foreach($payments as $payment)
-                        <option value="{{ $payment->payment_method }}">{{ $payment->payment_method }}</option>
-                    @endforeach
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="cash">Cash</option>
+                    <option value="mobile">Bkash/Nagad/Rocket</option>
                 </select>
-             </div> --}}
+             </div>
 
               <div class="text-center mt-2">
                <input type="submit" class=" btn btn-primary enter-btn m-3" value="Enroll Student" name="studentSubmit"/>
@@ -106,6 +107,9 @@ Add Student
 @endpush
 
 
+{{-- @foreach($payments as $payment)
+                        <option value="{{ $payment->payment_method }}">{{ $payment->payment_method }}</option>
+                    @endforeach --}}
 {{-- <div class="form-group mt-2">
                 <label for="payment_method">Payment Method</label>
                 <select name="payment_method" id="payment_method" class="form-control" required>

@@ -19,6 +19,7 @@ class Student extends Model
         'course_id',
         'course_name',
         'course_fee',
+        'payment_method',
         'batch',
         'status',
     ];

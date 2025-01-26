@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('student_id');
             $table->string('payment_method'); //bank, card, cash, bkash
-            $table->enum('status',['pending','completed'])->default('pending'); // pending, completed
+            $table->enum('status',['pending','approved'])->default('pending'); // pending, completed
             $table->decimal('fee', 8, 2);
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();
