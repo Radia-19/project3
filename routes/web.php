@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AddStudentController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\QuizController;
 
 // Home Page
 Route::get('/', [HomePageController::class,'index'])->name('home');
@@ -27,6 +28,13 @@ Route::get('/course/details/{id}', [CourseController::class, 'show'])->name('cou
 Route::get('course/edit/{id}', [CourseController::class, 'updateShow'])->name('updatecourse.show');
 Route::post('course/edit/{id}', [CourseController::class, 'update'])->name('course.update');
 Route::get('course/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
+
+
+
+Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes.index');
+Route::get('/quiz/{id}', [QuizController::class, 'show'])->name('quiz.show');
+Route::post('/quiz/submit', [QuizController::class, 'submit'])->name('quiz.submit');
+Route::get('/quizzes/result', [QuizController::class, 'result'])->name('quizzes.result');
 
 
 //Trainers

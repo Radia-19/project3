@@ -178,6 +178,27 @@ class CourseController extends Controller
     }
 
 
+    // public function submit(Request $request)
+    // {
+    //     $score = 0;
+    //     $answers = $request->except('_token');
+
+    //     // Compare answers (example)
+    //     $correctAnswers = [
+    //         'q1' => 'a',
+    //         'q2' => 'b',
+    //         'q3' => 'b',
+    //     ];
+
+    //     foreach ($answers as $key => $answer) {
+    //         if (isset($correctAnswers[$key]) && $correctAnswers[$key] === $answer) {
+    //             $score++;
+    //         }
+    //     }
+
+    //     return back()->with('message', "You scored $score out of " . count($correctAnswers));
+    // }
+
 
 }
 
