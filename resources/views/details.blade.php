@@ -91,9 +91,12 @@
                         </div>
                     </div>
                     @if(Auth::check() && Auth::user()->role === 'user')
-                    <p class="text-success text-end me-3">{{ $course->fee }} টাকা</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-start"><a class="btn btn-primary py-2 px-2 mt-2 enrollment-btn" href="{{ route('addStudent') }}" id="actionButton">এখনই ভর্তি হোন</a></p>
+                    <p class="text-success fw-bold text-end me-3">&#2547;{{ $course->fee }} টাকা</p>
+                    </div>
                     <hr>
-                    <a class="btn btn-primary py-3 px-5 mt-2 enrollment-btn" href="{{ route('addStudent') }}" id="actionButton">এখনই ভর্তি হোন</a>
+
                     @endif
                 </div>
                 <div>
@@ -187,10 +190,8 @@
                                                 <input type="radio" name="q3" value="c"> c) text-size
                                             </li>
                                         </ul>
-                                        <div class="text-center" style="background-color: #c8dc94">
-                                            <button type="submit" class="btn"  data-bs-toggle="popover"
-                                            data-bs-title="Assessment Form"
-                                            data-bs-content="Wanna Perticipate?? Enroll Now!!">Submit Quiz</button>
+                                        <div class="text-center w-100" style="background-color: #c8dc94">
+                                            <button type="submit" class="btn" data-bs-toggle="popover" data-bs-title="Assessment Form" data-bs-content="Wanna Perticipate?? Enroll Now!!">Submit Quiz</button>
                                         </div>
                                     </form>
                                 </div>
